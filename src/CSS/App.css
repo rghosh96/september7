@@ -22,7 +22,6 @@
 
 .title {
   font-family: var(--Allura) !important;
-  font-weight: 700 !important;
   color: var(--secondary) !important;
   font-size: 105px;
 }
@@ -92,10 +91,14 @@ h3 {
 }
 
 .logo {
-  width: 55px;
-  height: 55px;
+  width: 75px;
+  height: 75px;
   transition: .2s ease-in-out;
-  animation: rotate 3s;
+  /* animation: rotate 3s; */
+}
+
+svg g path {
+  fill: white;
 }
 
 .logo:hover {
