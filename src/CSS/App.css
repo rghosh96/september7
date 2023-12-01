@@ -136,7 +136,7 @@ h3 {
     font-size: 19px !important;
   }
   .title {
-    font-size: 45px;
+    font-size: 55px;
     margin-right: 5px !important;
   }
   .logo-title {
@@ -148,11 +148,11 @@ h3 {
     width: 85%;
   }
   .nav-item {
-    font-size: 15px !important;
+    font-size: 9px !important;
   }
   .logo {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
   }
 
   @keyframes lineDraw {
