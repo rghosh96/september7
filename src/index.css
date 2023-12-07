@@ -7,22 +7,7 @@
   --green: #80A692;
   --gold: #ffd59d;
   --Allura: 'Allura', cursive;
-  --Garamond: 'Garamond', serif;
-}
-
-/* DARK THEME */
-.dark-theme {
-  --primary: var(--pink);
-  --secondary: var(--light);
-  --accent1: var(--green);
-  --accent2: var(--purple);
-  --accent3: var(--grey);
-  --background: var(--dark);  
-}
-
-.dark-theme hr {
-  border-top: .5px solid var(--accent1);
-  margin: 0px;
+  --Garamond: 'Cormorant Garamond', serif;
 }
 
 /* LIGHT THEME */
@@ -32,7 +17,6 @@
   --accent1: var(--green);
   --accent2: var(--purple);
   --accent3: var(--grey);
-  --background: var(--light);  
 }
 
 .light-theme hr {
@@ -47,7 +31,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background)
+  background-color: rgb(0, 0, 0);
 }
 
 code {
