@@ -16,9 +16,9 @@
   width: 100%;
   background: linear-gradient(
     rgba(0, 0, 0, .9), 
-    rgba(0, 0, 0, .3), 
+    rgba(0, 0, 0, 0), 
     rgba(0, 0, 0, 0)
-  ),url('../assets/images/background.jpeg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+  ),url('../assets/images/background_3.jpeg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
