@@ -1,45 +1,41 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '../index.css'
-import '../CSS/App.css';
+import Home from './components/Home';
+import Story from './components/Story';
+import Information from './components/Information';
+import Gallery from './components/Gallery';
 import { ReactComponent as Logo } from '../assets/Logo.svg'
+
 
 function App() {
   return (
     <div className="App">
-      <div className="bg-image">
-      
-      
-      </div>
-      
       <div className="navigation">
         <div className="nav-column">
-          <p className="nav-item"><a href='/'>our story</a></p>
-          <p className="nav-item"><a href='/'>gallery</a></p>
+          <p className="nav-item"><a href='/'>home</a></p>
+          <p className="nav-item"><a href='/story'>story</a></p>
         </div>
 
         <div class="logo-column">
-          <Logo className="logo"/>
+            <a href="/">
+                <Logo className="logo"/>
+            </a>
         </div>
-          
         <div className="nav-column">
-          <p className="nav-item"><a href='/'>information</a></p>
-          <p className="nav-item"><a href='/'>registry</a></p>
+          <p className="nav-item"><a href='/information'>information</a></p>
+          <p className="nav-item"><a href='/gallery'>gallery</a></p>
         </div>
       </div>
 
-
-      <div className="title-area">
-        <h1 className="title">Rashi & Gabriel</h1>
-        <hr/>
-        <h3 className="subtitle">
-            september 7, 2024
-        </h3>
-      </div>
-      
-      
-      
-      <div className="subtitle">
-      </div>
-     
+      <BrowserRouter>
+          <Routes>
+          <Route path="/" element={<Home />} exact/>
+          <Route path="/story" element={<Story />}/>
+          <Route path="/information" element={<Information />}/>
+          <Route path="/gallery" element={<Gallery />}/>
+          {/* <Route component={Error}/> */}
+        </Routes>
+    </BrowserRouter>
     </div>
   );
 }

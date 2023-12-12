@@ -1,13 +1,10 @@
-.App {
+.Home {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white !important;
   height: 100vh;
-  background-color: black;
-  opacity: 1;
-  color: #ffffff !important; /* Optional: Set text color for better visibility */
-  animation: fadeBackground 1s ease-in;
 }
 
 .bg-image {
@@ -18,7 +15,7 @@
     rgba(0, 0, 0, .5), 
     rgba(0, 0, 0, .3), 
     rgba(0, 0, 0, .3)
-  ),url('../assets/images/background_3.jpeg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+  ),url('../assets/images/home.jpeg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
@@ -36,9 +33,10 @@
 .title {
   font-family: var(--Allura) !important;
   color: var(--secondary) !important;
-  font-size: 105px;
+  font-size: 125px;
   font-weight: 400 !important;
   color: white !important;
+  text-align: center;
 }
 
 .subtitle {
@@ -51,43 +49,6 @@
   align-items: center;
   text-align: center;
   z-index: 99999;
-}
-
-.navigation {
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  top: 5%;
-  width: 65%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-column {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
-}
-
-.nav-item {
-  color: var(--secondary);
-  font-family: var(--Garamond) !important;
-  font-size: 15px !important;
-  transition: .2s ease-in-out;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 700 !important;
-}
-
-.nav-item:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: white;
 }
 
 hr {
@@ -120,23 +81,6 @@ h3 {
   font-size: 21px !important;
 }
 
-.logo {
-  width: 75px;
-  height: 75px;
-  transition: .2s ease-in-out;
-  /* animation: rotate 3s; */
-}
-
-
-svg g path {
-  fill: white;
-}
-
-.logo:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 .logo-title {
   width: 55px;
   height: 125px;
@@ -153,13 +97,8 @@ svg g path {
   }
 }
 
-@keyframes fadeBackground {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
-
-@media (min-width: 280px) and (max-width: 649px) {
+@media (min-width: 280px) and (max-width: 624px) {
   .subtitle {
     width: 75%;
   }
@@ -176,22 +115,6 @@ svg g path {
   .title-area {
     margin-top: -30% !important;
   }
-  .logo-title {
-    width: 35px;
-    height: 95px;
-    margin-right: 5px;
-  }
-  .navigation {
-    width: 85%;
-  }
-  .nav-item {
-    font-size: 9px !important;
-    letter-spacing: 1px !important;
-  }
-  .logo {
-    width: 25px;
-    height: 25px;
-  }
 
   @keyframes lineDraw {
     0% {
@@ -203,15 +126,16 @@ svg g path {
   }
 }
 
-@media (min-width: 650px) and (max-width: 1024px) {
+
+@media (min-width: 625px) and (max-width: 1024px) {
   .subtitle {
     width: 65%;
   }
   h3 {
     font-size: 25px !important;
   }
-  .navigation {
-    width: 85%;
+  .title {
+    font-size: 95px;
   }
   @keyframes lineDraw {
     0% {
@@ -226,8 +150,5 @@ svg g path {
 @media (min-width: 1025px) and (max-width: 1525px) {
   .subtitle {
     width: 45%;
-  }
-  .navigation {
-    width: 85%;
   }
 }

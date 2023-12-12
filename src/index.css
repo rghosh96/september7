@@ -31,7 +31,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
 }
 
 code {
@@ -64,4 +64,96 @@ hr {
 .emphasis {
   font-weight: 500 !important;
   color: var(--accent2);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  opacity: 1;
+  color: #ffffff !important; /* Optional: Set text color for better visibility */
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 5%;
+  width: 65% ;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99999999999;
+}
+
+.nav-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.nav-item {
+  color: var(--secondary);
+  font-family: var(--Garamond) !important;
+  font-size: 15px !important;
+  transition: .2s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700 !important;
+}
+
+.nav-item:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  transition: .2s ease-in-out;
+  /* animation: rotate 3s; */
+}
+
+
+svg g path {
+  fill: white;
+}
+
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+@media (min-width: 280px) and (max-width: 624px) {
+  .navigation {
+    width: 85%;
+  }
+  .nav-item {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+  }
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+@media (min-width: 625px) and (max-width: 1024px) {
+  .navigation {
+    width: 85%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1525px) {
+  .navigation {
+    width: 85%;
+  }
 }
