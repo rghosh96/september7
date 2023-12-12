@@ -31,8 +31,8 @@ function App() {
         <h1 className="title">Rashi & Gabriel</h1>
         <hr/>
         <h3 className="subtitle">
-            7th september 2024
-          </h3>
+            september 7, 2024
+        </h3>
       </div>
       
       
