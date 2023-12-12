@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import '../index.css'
 import Home from './components/Home';
 import Story from './components/Story';
@@ -10,10 +10,20 @@ import { ReactComponent as Logo } from '../assets/Logo.svg'
 function App() {
   return (
     <div className="App">
-      <div className="navigation">
+
+      <BrowserRouter>
+          <Routes>
+          <Route index element={<Home />} exact/>
+          <Route path="/story" element={<Story />}/>
+          <Route path="/information" element={<Information />}/>
+          <Route path="/gallery" element={<Gallery />}/>
+          {/* <Route component={Error}/> */}
+        </Routes>
+
+        <div className="navigation">
         <div className="nav-column">
-          <p className="nav-item"><a href='/'>home</a></p>
-          <p className="nav-item"><a href='/story'>story</a></p>
+          <p className="nav-item"><Link to="./">home</Link></p>
+          <p className="nav-item"><Link to='./story'>story</Link></p>
         </div>
 
         <div class="logo-column">
@@ -22,19 +32,10 @@ function App() {
             </a>
         </div>
         <div className="nav-column">
-          <p className="nav-item"><a href='/information'>information</a></p>
-          <p className="nav-item"><a href='/gallery'>gallery</a></p>
+          <p className="nav-item"><Link to='./information'>information</Link></p>
+          <p className="nav-item"><Link to='./gallery'>gallery</Link></p>
         </div>
       </div>
-
-      <BrowserRouter>
-          <Routes>
-          <Route path="/" element={<Home />} exact/>
-          <Route path="/story" element={<Story />}/>
-          <Route path="/information" element={<Information />}/>
-          <Route path="/gallery" element={<Gallery />}/>
-          {/* <Route component={Error}/> */}
-        </Routes>
     </BrowserRouter>
     </div>
   );
