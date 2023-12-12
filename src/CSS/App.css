@@ -15,7 +15,7 @@
   height: 100vh;
   width: 100%;
   background: linear-gradient(
-    rgba(0, 0, 0, .45), 
+    rgba(0, 0, 0, .5), 
     rgba(0, 0, 0, .3), 
     rgba(0, 0, 0, .3)
   ),url('../assets/images/background_3.jpeg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
