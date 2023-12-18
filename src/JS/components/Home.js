@@ -1,7 +1,6 @@
 import '../../CSS/Home.css';
 
 function Home() {
-    console.log("HERE")
   return (
     <div className="Home">
       <div className="bg-image">

@@ -21,18 +21,22 @@
 .bg-image-information {
   position: absolute;
   top: 0;
-  height: 75vh;
+  height: 85vh;
   width: 100%;
   background: linear-gradient(
     rgba(0, 0, 0, .5), 
     rgba(0, 0, 0, .3), 
     rgba(0, 0, 0, .3)
-  ),url('../assets/images/information.JPG'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+  ),url('../assets/images/information.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
-  border-bottom: rgb(231, 179, 38) 9px double;
+  --mask:
+  radial-gradient(122.98px at 50% calc(100% - 165.00px),#000 99%,#0000 101%) calc(50% - 110px) 0/220px 100%,
+  radial-gradient(122.98px at 50% calc(100% + 110.00px),#0000 99%,#000 101%) 50% calc(100% - 55px)/220px 100% repeat-x;
+  -webkit-mask: var(--mask);
+        mask: var(--mask);
 }
 
 .content {

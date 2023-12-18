@@ -10,20 +10,6 @@
   --Garamond: 'Cormorant Garamond', serif;
 }
 
-/* LIGHT THEME */
-.light-theme {
-  --primary: var(--pink);
-  --secondary: var(--light);
-  --accent1: var(--green);
-  --accent2: var(--purple);
-  --accent3: var(--grey);
-}
-
-.light-theme hr {
-  border-top: .5px solid var(--accent1);
-  margin: 0px;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -97,7 +83,7 @@ hr {
 .nav-item {
   color: var(--secondary);
   font-family: var(--Garamond) !important;
-  font-size: 15px !important;
+  font-size: 17px !important;
   transition: .2s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 2px;
