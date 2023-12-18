@@ -63,15 +63,12 @@ hr {
 }
 
 .navigation {
-  width: 65%;
-  position: fixed;
-  top: 5%;
-}
-
-.menu {
   display: flex;
   flex-direction: row;
-  width: 100% ;
+  position: fixed;
+  top: 5%;
+  width: 65% ;
+  justify-content: space-between;
   align-items: center;
   z-index: 99999999999;
 }
@@ -152,6 +149,17 @@ svg g path {
 }
 
 @media (min-width: 280px) and (max-width: 624px) {
+  .navigation {
+    width: 85%;
+  }
+  .nav-item {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+  }
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
 
   .menu-toggle {
     display: block; /* Display the hamburger icon on smaller screens */
@@ -159,6 +167,13 @@ svg g path {
 
 .menu {
     display: none; /* Hide the menu by default on smaller screens */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
 }
 
 .menu.active {
@@ -171,10 +186,6 @@ svg g path {
 
 .menu a:hover {
     color: #ff6600;
-}
-
-.mobile-menu {
-  display: none;
 }
 
 /* Style for the hamburger icon when active */
