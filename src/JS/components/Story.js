@@ -13,8 +13,6 @@ function Story() {
         </div>
       </div>
 
-      <div class="box"></div>
-
       <div className="content">
           <p>❤︎ Coming soon! ❤︎</p>
       </div>
