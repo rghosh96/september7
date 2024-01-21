@@ -1,14 +1,14 @@
-import '../../CSS/Story.css';
+import '../../CSS/Schedule.css';
 
-function Story() {
+function Schedule() {
   return (
-    <div className="Story">
+    <div className="Schedule">
 
       <div className="heading-area">
-        <div className="bg-image-story"></div>
+        <div className="bg-image-schedule"></div>
 
         <div className="title-area">
-          <h1 className="title">Our Story</h1>
+          <h1 className="title">Schedule</h1>
           <hr/>
         </div>
       </div>
@@ -23,4 +23,4 @@ function Story() {
   );
 }
 
-export default Story;
+export default Schedule;
