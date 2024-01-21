@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 65vh;
     background-color: rgb(255, 255, 255);
     opacity: 1;
     color: #ffffff !important; /* Optional: Set text color for better visibility */
@@ -21,13 +21,13 @@
 .bg-image-schedule {
   position: absolute;
   top: 0;
-  height: 85vh;
+  height: 65vh;
   width: 100%;
   background: linear-gradient(
     rgba(0, 0, 0, .5), 
     rgba(0, 0, 0, .3), 
     rgba(0, 0, 0, .3)
-  ),url('../assets/images/story.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+  ),url('../assets/images/schedule.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */

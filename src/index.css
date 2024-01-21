@@ -5,7 +5,7 @@
   --pink: #ECB3C1;
   --purple: #AF94AE;
   --green: #80A692;
-  --gold: #ffd59d;
+  --gold: #efae58;
   --Allura: 'Allura', cursive;
   --Garamond: 'Cormorant Garamond', serif;
 }
@@ -65,7 +65,7 @@ hr {
 .navigation {
   display: flex;
   flex-direction: row;
-  position: fixed;
+  position: absolute;
   top: 5%;
   width: 65% ;
   justify-content: space-between;
@@ -154,7 +154,7 @@ svg g path {
     width: 85%;
   }
   .nav-item {
-    font-size: 9px !important;
+    font-size: 15px !important;
     letter-spacing: 1px !important;
   }
   .logo {

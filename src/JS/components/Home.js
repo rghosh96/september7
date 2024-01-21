@@ -10,9 +10,8 @@ function Home() {
 
 
       <div className="title-area">
-        <h3 className="subtitle">
-            september 7, 2024 ❤︎ centerton, ar
-        </h3>
+        <span className="subtitle"> september 7, 2024 <span class="small">&nbsp; ❧ &nbsp;</span> centerton, ar </span>
+        <br/>
         <hr/>
         <h1 className="title">Rashi & Gabriel</h1>
         <hr/>

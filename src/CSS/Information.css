@@ -12,7 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 85vh;
+    height: 65vh;
     background-color: rgb(255, 255, 255);
     opacity: 1;
     color: #ffffff !important; /* Optional: Set text color for better visibility */
@@ -21,7 +21,7 @@
 .bg-image-information {
   position: absolute;
   top: 0;
-  height: 85vh;
+  height: 65vh;
   width: 100%;
   background: linear-gradient(
     rgba(0, 0, 0, .5), 
@@ -40,11 +40,69 @@
 }
 
 .content {
-    margin: 50px;
+    margin: 0 50px 0 50px;
     padding: 15px;
     background-color: white;
     width: 65%;
     color: black;
     display: flex;
     flex-direction: column;
+}
+
+h2 {
+  font-family: var(--Allura) !important;
+  color: var(--dark);
+  text-align: center;
+  font-size: 45px !important;
+}
+
+.line-container {
+  display: flex;
+  justify-content: center;
+}
+
+.line-text {
+  display: flex;
+  position: relative;
+  padding: 0 10px; /* Adjust padding as needed */
+}
+
+.line-text::before,
+.line-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  min-width: 50px;
+  height: 1px;
+  background-color: var(--gold); /* Adjust color as needed */
+}
+
+.line-text::before {
+  right: 100%;
+  margin-right: 10px; /* Adjust margin as needed */
+}
+
+.line-text::after {
+  left: 100%;
+  margin-left: 10px; /* Adjust margin as needed */
+}
+
+.question {
+  font-weight: 700px !important;
+  margin: 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label {
+  color: var(--dark);
+  margin: 0
+}
+
+.text {
+  margin: 5px;
 }

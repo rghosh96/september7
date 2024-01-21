@@ -34,7 +34,9 @@ const CountdownTimer = () => {
         <p className="label">
           months
         </p>
-        </div>
+      </div>
+
+      <block className="symbol"> ❧ </block>
 
       <div className="block">
         <p className="time">
@@ -45,6 +47,8 @@ const CountdownTimer = () => {
         </p>
       </div>
 
+      <block className="symbol"> ❧ </block>
+
       <div className="block">
         <p className="time">
           {timeRemaining.days}
@@ -53,16 +57,6 @@ const CountdownTimer = () => {
           days
         </p>
       </div>
-
-      <div className="block">
-        <p className="time">
-          {timeRemaining.hours}
-        </p>
-        <p className="label">
-          hours
-        </p>
-      </div>
-      
     </div>
   );
 };
