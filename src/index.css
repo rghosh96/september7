@@ -1,11 +1,14 @@
 :root {
-  --dark: #6A6A6A;
+  --grey: #6A6A6A;
   --light: #FFFCF8;
-  --grey: #AFAFAF;
-  --pink: #ECB3C1;
-  --purple: #AF94AE;
-  --green: #80A692;
-  --gold: #efae58;
+  --brightpink: #FF6186;
+  --teagreen: #CCE1A8;
+  --africanviolet: #BE8FBF;
+  --fairytale: #FFCFDA;
+  --resedagreen: #788661;
+  --thistle: #E9CAE9;
+  --satinsheetgold: #B29434;
+  --jasmine: #F6D772;
   --Allura: 'Allura', cursive;
   --Garamond: 'Cormorant Garamond', serif;
 }
@@ -141,7 +144,7 @@ a {
 
 
 svg g path {
-  fill: white;
+  fill: var(--satinsheetgold);
 }
 
 .logo:hover {

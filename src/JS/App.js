@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Schedule from './components/Schedule';
 import Information from './components/Information';
 import Gallery from './components/Gallery';
+import Landing from './components/Landing';
 import { ReactComponent as Logo } from '../assets/Logo.svg'
 
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/schedule" element={<Schedule />}/>
           <Route path="/information" element={<Information />}/>
           <Route path="/gallery" element={<Gallery />}/>
+          <Route path="/landing" element={<Landing />}/>
           {/* <Route component={Error}/> */}
         </Routes>
 
