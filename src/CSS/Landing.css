@@ -1,3 +1,14 @@
+.bg-image {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: url('../assets/paisley.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+  background-size: cover; /* Cover the entire container with the background image */
+  background-position: center; /* Center the background image horizontally and vertically */
+  background-repeat: no-repeat; /* Prevent background image from repeating */
+  opacity: .5;
+}
+
 .Landing {
     display: flex;
     flex-direction: column;
@@ -13,8 +24,12 @@
     align-items: center;
 }
 
-.bridegroom {
-    height: 275px;
+.illustration {
+    height: 175px;
+}
+
+.couple {
+  position: fixed;
 }
 
 .title-area {
@@ -22,6 +37,14 @@
     flex-direction: column;
     align-items: center;
     margin-top: 25px !important;
+  }
+
+  .illustration-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
   
   .title {
@@ -42,4 +65,17 @@
     text-align: center;
     z-index: 99999;
     color: var(--africanviolet);
+  }
+
+  .content-area {
+    background-color: var(--light) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    width: 85%;
+    z-index: 99999;
+    border-radius: 35px;
+    border: 15px double var(--satinsheetgold);
   }
