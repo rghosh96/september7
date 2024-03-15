@@ -8,7 +8,7 @@ function Gallery() {
         <div className="bg-image-gallery"></div>
 
         <div className="title-area">
-          <h1 className="title">Gallery</h1>
+          <h1 className="title">FAQ</h1>
           <hr/>
         </div>
       </div>

@@ -8,7 +8,7 @@ function Information() {
         <div className="bg-image-information"></div>
 
         <div className="title-area">
-          <h1 className="title">Information</h1>
+          <h1 className="title">Ceremony & Reception</h1>
           <hr/>
         </div>
       </div>

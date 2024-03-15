@@ -8,7 +8,7 @@ function Schedule() {
         <div className="bg-image-schedule"></div>
 
         <div className="title-area">
-          <h1 className="title">Schedule</h1>
+          <h1 className="title">Travel Information</h1>
           <hr/>
         </div>
       </div>
