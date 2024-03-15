@@ -61,8 +61,39 @@ hr {
   align-items: center;
   justify-content: center;
   background-color: white;
+  height: 100vh;
   opacity: 1;
   color: #ffffff !important; /* Optional: Set text color for better visibility */
+}
+
+.border {
+  z-index: 9999999999;
+  position: absolute;
+  width: 150px !important;
+  height: 150px !important;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  transform: scaleX(-1);
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  transform: scaleY(-1);
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  transform: scaleX(-1) scaleY(-1);
+  bottom: 0;
+  right: 0;
 }
 
 .navigation {
@@ -84,7 +115,6 @@ hr {
 }
 
 .nav-item {
-  color: var(--secondary);
   font-family: var(--Garamond) !important;
   font-size: 17px !important;
   transition: .2s ease-in-out;
@@ -101,7 +131,6 @@ hr {
 
 a {
   text-decoration: none;
-  color: white;
 }
 
 /* Style for the hamburger icon */
@@ -142,6 +171,15 @@ a {
   /* animation: rotate 3s; */
 }
 
+button {
+  padding: 15px;
+  font-family: var(--Garamond);
+  border-radius: 15px;
+  border: 1px double var(--light);
+  background-color: transparent;
+  color: var(--light);
+  font-size: 25px;
+}
 
 svg g path {
   fill: var(--satinsheetgold);

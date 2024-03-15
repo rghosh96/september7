@@ -1,0 +1,27 @@
+.RSVP {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white !important;
+    width: 100%;
+    height: 100%;
+  }
+
+  .RSVP-title {
+    color: var(--satinsheetgold);
+    letter-spacing: 5px !important;
+  }
+
+  .gold {
+    border-color: var(--satinsheetgold)
+  }
+
+  .RSVP-subtitle {
+    font-family: var(--Garamond);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: var(--resedagreen);
+  }
