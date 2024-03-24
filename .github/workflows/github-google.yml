@@ -3,7 +3,7 @@ name: github-google
 on:
   push:
     branches:
-      - gh-pages
+      - main
 
 jobs:
   job_id:
