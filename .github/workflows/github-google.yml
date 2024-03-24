@@ -1,0 +1,16 @@
+name: github-google
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  job_id:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: 'actions/checkout@v4'
+
+    - uses: 'google-github-actions/auth@v2'
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
