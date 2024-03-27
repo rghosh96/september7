@@ -7,7 +7,7 @@
   --fairytale: #FFCFDA;
   --resedagreen: #788661;
   --thistle: #E9CAE9;
-  --satinsheetgold: #B29434;
+  --satinsheetgold: #d6ae29;
   --jasmine: #F6D772;
   --Allura: 'Allura', cursive;
   --Garamond: 'Cormorant Garamond', serif;
@@ -101,7 +101,7 @@ hr {
   flex-direction: row;
   position: absolute;
   top: 5%;
-  width: 95% ;
+  width: 85% ;
   justify-content: space-between;
   align-items: center;
   z-index: 99999999999;
