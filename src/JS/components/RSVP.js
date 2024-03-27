@@ -37,7 +37,7 @@ function RSVP() {
       <Border class="bottom-left border"/>
       <Border class="bottom-right border"/>
 
-      <h1 className="RSVP-title" onClick={handleClick}>RSVP</h1>
+      <h1 className="RSVP-title">RSVP</h1>
       <hr className="gold"/>
       <p className="RSVP-subtitle">Coming Soon!</p>
 
