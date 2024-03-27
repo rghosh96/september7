@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.fe8b7699.css",
-    "main.js": "/static/js/main.27a4baec.js",
+    "main.css": "/static/css/main.6939f596.css",
+    "main.js": "/static/js/main.b009f037.js",
     "static/js/453.6fe67f96.chunk.js": "/static/js/453.6fe67f96.chunk.js",
     "static/media/gallery.jpg": "/static/media/gallery.20690efe78b87e3b54fc.jpg",
     "static/media/information.jpg": "/static/media/information.e02a9800db9c7468a535.jpg",
-    "static/media/engagement.jpg": "/static/media/engagement.5d74b4cf902bdc8b9fcd.jpg",
+    "static/media/engagement2.jpg": "/static/media/engagement2.80306144fb466f87d4fe.jpg",
     "static/media/schedule.jpg": "/static/media/schedule.135b33e4eb7e1b903c37.jpg",
     "static/media/Border.svg": "/static/media/Border.f56cabd851d83559a4d7c0bd44f11e98.svg",
     "static/media/Logo.svg": "/static/media/Logo.79bcc6056c490d4fd033091e402678d5.svg",
     "index.html": "/index.html",
-    "main.fe8b7699.css.map": "/static/css/main.fe8b7699.css.map",
-    "main.27a4baec.js.map": "/static/js/main.27a4baec.js.map",
+    "main.6939f596.css.map": "/static/css/main.6939f596.css.map",
+    "main.b009f037.js.map": "/static/js/main.b009f037.js.map",
     "453.6fe67f96.chunk.js.map": "/static/js/453.6fe67f96.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe8b7699.css",
-    "static/js/main.27a4baec.js"
+    "static/css/main.6939f596.css",
+    "static/js/main.b009f037.js"
   ]
 }
