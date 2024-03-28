@@ -1,5 +1,5 @@
 import '../../CSS/RSVP.css';
-import { ReactComponent as Border } from '../../assets/Border.svg'
+import { ReactComponent as Border } from '../../assets/GoldBorder.svg'
 
 function RSVP() {
 
@@ -32,7 +32,7 @@ function RSVP() {
   return (
     <div className="RSVP">
 
-    <Border class="top-left border"/>
+      <Border class="top-left border"/>
       <Border class="top-right border"/>
       <Border class="bottom-left border"/>
       <Border class="bottom-right border"/>

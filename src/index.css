@@ -267,9 +267,6 @@ button {
   font-size: 25px;
 }
 
-svg g path {
-  fill: var(--satinsheetgold);
-}
 
 .logo:hover {
   cursor: pointer;

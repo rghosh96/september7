@@ -1,7 +1,7 @@
 import '../../CSS/Home.css';
 import '../CountdownTimer'
 import CountdownTimer from '../CountdownTimer';
-import { ReactComponent as Border } from '../../assets/Border.svg'
+import { ReactComponent as Border } from '../../assets/WhiteBorder.svg'
 
 function Home() {
   return (
@@ -21,10 +21,10 @@ function Home() {
 
       <div className="bg-image"></div>
 
-      <Border class="top-left border"/>
-      <Border class="top-right border"/>
-      <Border class="bottom-left border"/>
-      <Border class="bottom-right border"/>
+      <Border className="top-left border"/>
+      <Border className="top-right border"/>
+      <Border className="bottom-left border"/>
+      <Border className="bottom-right border"/>
      
     </div>
   );

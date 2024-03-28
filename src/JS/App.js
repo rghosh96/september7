@@ -6,7 +6,8 @@ import Information from './components/Information';
 import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
 import React, { useState, useEffect } from 'react';
-import { ReactComponent as Logo } from '../assets/Logo.svg';
+import { ReactComponent as WhiteLogo } from '../assets/WhiteLogo.svg';
+import { ReactComponent as GoldLogo } from '../assets/GoldLogo.svg';
 
 // Modal component
 const Modal = ({ isOpen, onClose }) => {
@@ -54,7 +55,7 @@ function Navigation() {
 
       <div className="logo-column">
         <a href="/">
-          <Logo className="logo"/>
+          {location.pathname === '/' ? <WhiteLogo className="logo"/> : <GoldLogo className="logo"/> }
         </a>
       </div>
 
@@ -82,7 +83,7 @@ const NavigationMobile = () => {
   return (
     <div className="navigation-mobile">
        <a className="nav-mobile" href="/">
-          <Logo className="logo-mobile"/>
+       {location.pathname === '/' ? <WhiteLogo className="logo-mobile"/> : <GoldLogo className="logo-mobile"/> }
         </a>
       <p className="nav-mobile" style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} onClick={openModal}>Navigation ▾</p>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
