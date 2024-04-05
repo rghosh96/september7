@@ -14,11 +14,6 @@ function Home() {
         <h1 className="title">Rashi & Gabriel</h1>
     
         <CountdownTimer />
-        <br/>
-        <br/>
-        <a href="/rsvp">
-          <button className="rsvp">Click here to RSVP!</button>
-        </a>
        
       </div>
 
