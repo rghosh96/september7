@@ -235,7 +235,7 @@ a {
   align-items: center;
 }
 
-.modal {
+.modal-nav {
   background-color: white;
   padding: 20px;
   color: var(--resedagreen);
@@ -265,6 +265,13 @@ button {
   background-color: transparent;
   color: var(--light);
   font-size: 25px;
+  transition: .2s ease-in-out;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--satinsheetgold);
+  border-color: var(--satinsheetgold);
 }
 
 

@@ -1,51 +1,113 @@
 .Schedule {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white !important;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white !important;
+  width: 100%;
+  overflow-x: hidden; /* Ensure horizontal overflow is hidden */
+  overflow-y: auto; /* Allow vertical scrolling for content */
+}
 
 .heading-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 65vh;
-    background-color: rgb(255, 255, 255);
-    opacity: 1;
-    color: #ffffff !important; /* Optional: Set text color for better visibility */
+  position: fixed; /* Fix the heading area at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity for better visibility */
+  color: #ffffff !important; /* Optional: Set text color for better visibility */
+  z-index: 1; /* Ensure the heading-area is above other content */
+  width: 100%; /* Ensure the heading-area spans the full width */
+}
+
+.title-area {
+  margin-top: 95px;
 }
 
 .bg-image-schedule {
-  position: absolute;
+  position: absolute; /* Position the background image absolutely */
   top: 0;
-  height: 65vh;
+  left: 0;
+  height: 100%; /* Adjusted to fill the entire height of the heading-area */
   width: 100%;
   background: linear-gradient(
-    rgba(0, 0, 0, .5), 
-    rgba(0, 0, 0, .3), 
-    rgba(0, 0, 0, .3)
-  ),url('../assets/images/schedule.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+      rgba(0, 0, 0, .5), 
+      rgba(0, 0, 0, .3), 
+      rgba(0, 0, 0, .3)
+    ),
+    url('../assets/images/schedule.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
-  --mask:
-  radial-gradient(122.98px at 50% calc(100% - 165.00px),#000 99%,#0000 101%) calc(50% - 110px) 0/220px 100%,
-  radial-gradient(122.98px at 50% calc(100% + 110.00px),#0000 99%,#000 101%) 50% calc(100% - 55px)/220px 100% repeat-x;
-  -webkit-mask: var(--mask);
-          mask: var(--mask);
-  }
-
-.content {
-    margin: 50px;
-    padding: 15px;
-    background-color: white;
-    width: 65%;
-    color: black;
-    display: flex;
-    flex-direction: column;
 }
 
+.content {
+  margin-top: 55vh; /* Adjust to the height of heading-area */
+  padding: 15px;
+  background-color: white;
+  width: 85%;
+  color: black;
+  display: block;
+  flex-direction: column;
+  overflow: scroll;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.symbol-divider {
+  color: var(--resedagreen) !important;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.info-section-title {
+  font-family: var(--Allura) !important;
+  color: var(--satinsheetgold);
+  font-size: 35px !important;
+  margin: 0;
+  text-align: center;
+}
+
+.info-label {
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px !important;
+  text-align: center;
+}
+
+.info-details {
+  margin: 0;
+  text-align: center;
+}
+
+.info-link {
+  color: var(--africanviolet);
+  font-family: var(--Garamond);
+  font-weight: 700;
+}
+
+.location {
+  color: var(--resedagreen);
+  font-size: 17px !important;
+}
+
+.location-details {
+  font-size: 17px !important;
+}
+
+ul {
+  text-align: left !important;
+}

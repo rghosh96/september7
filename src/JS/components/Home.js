@@ -16,7 +16,10 @@ function Home() {
         <CountdownTimer />
         <br/>
         <br/>
-        <button class="rsvp">RSVP Coming Soon!</button>
+        <a href="/rsvp">
+          <button className="rsvp">Click here to RSVP!</button>
+        </a>
+       
       </div>
 
       <div className="bg-image"></div>

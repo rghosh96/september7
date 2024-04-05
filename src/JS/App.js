@@ -20,7 +20,7 @@ const Modal = ({ isOpen, onClose }) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-nav" onClick={(e) => e.stopPropagation()}>
         <span className="close" onClick={onClose}>&times;</span>
         <div className="modal-content">
           <p className="modal-title">Navigation</p>
@@ -28,8 +28,8 @@ const Modal = ({ isOpen, onClose }) => {
           <br/>
           <Link onClick={handleClose} className="modal-link" to='./'>home</Link>
           <Link onClick={handleClose} className="modal-link" to="./rsvp">rsvp</Link>
-          <Link onClick={handleClose} className="modal-link" to='./information'>ceremony & reception</Link>
-          <Link onClick={handleClose} className="modal-link" to='./schedule'>travel information</Link>
+          <Link onClick={handleClose} className="modal-link" to='./information'>schedule</Link>
+          <Link onClick={handleClose} className="modal-link" to='./schedule'>information</Link>
           <Link onClick={handleClose} className="modal-link" to='./gallery'>faq</Link>
           <button onClick={onClose}>Close</button>
         </div>
@@ -49,7 +49,7 @@ function Navigation() {
           <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="./rsvp">rsvp</Link>
         </p>
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./information'>ceremony & reception</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./information'>schedule</Link>
         </p>
       </div>
 
@@ -61,7 +61,7 @@ function Navigation() {
 
       <div className="nav-column">
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./schedule'>travel information</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./schedule'>information</Link>
         </p>
         <p className="nav-item">
           <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./gallery'>faq</Link>

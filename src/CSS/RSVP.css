@@ -164,7 +164,13 @@ input[type="email"] {
   font-weight: 700;
   padding: 11px;
   text-align: center;
+  transition: .2s ease-in-out;
 }
+
+.submit-button:hover, .modal-button:hover {
+  cursor: pointer;
+  background-color: var(--satinsheetgold)
+} 
 
 .center {
   margin: 15px;

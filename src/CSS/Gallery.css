@@ -1,50 +1,88 @@
 .Gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white !important;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white !important;
+  width: 100%;
+  overflow-x: hidden; /* Ensure horizontal overflow is hidden */
+  overflow-y: auto; /* Allow vertical scrolling for content */
+}
 
 .heading-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 65vh;
-    background-color: rgb(255, 255, 255);
-    opacity: 1;
-    color: #ffffff !important; /* Optional: Set text color for better visibility */
+  position: fixed; /* Fix the heading area at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity for better visibility */
+  color: #ffffff !important; /* Optional: Set text color for better visibility */
+  z-index: 1; /* Ensure the heading-area is above other content */
+  width: 100%; /* Ensure the heading-area spans the full width */
+}
+
+.title-area {
+  margin-top: 95px;
 }
 
 .bg-image-gallery {
-  position: absolute;
+  position: absolute; /* Position the background image absolutely */
   top: 0;
-  height: 65vh;
+  left: 0;
+  height: 100%; /* Adjusted to fill the entire height of the heading-area */
   width: 100%;
   background: linear-gradient(
-    rgba(0, 0, 0, .5), 
-    rgba(0, 0, 0, .3), 
-    rgba(0, 0, 0, .3)
-  ),url('../assets/images/gallery.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+      rgba(0, 0, 0, .5), 
+      rgba(0, 0, 0, .3), 
+      rgba(0, 0, 0, .3)
+    ),
+    url('../assets/images/gallery.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
   background-position: center; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
-  --mask:
-  radial-gradient(122.98px at 50% calc(100% - 165.00px),#000 99%,#0000 101%) calc(50% - 110px) 0/220px 100%,
-  radial-gradient(122.98px at 50% calc(100% + 110.00px),#0000 99%,#000 101%) 50% calc(100% - 55px)/220px 100% repeat-x;
-  -webkit-mask: var(--mask);
-        mask: var(--mask);
 }
 
 .content {
-    margin: 0 50px 0 50px;
-    padding: 15px;
-    background-color: white;
-    width: 65%;
-    color: black;
-    display: flex;
-    flex-direction: column;
+  margin-top: 55vh; /* Adjust to the height of heading-area */
+  padding: 15px;
+  background-color: white;
+  width: 75%;
+  color: black;
+  display: block;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.question {
+  font-family: var(--Garamond);
+  text-transform: uppercase;
+  color: var(--resedagreen);
+  font-weight: 700;
+  margin-bottom: 11px;
+  font-size: 17px !important;
+}
+
+.q-and-a {
+  border: 1px solid var(--satinsheetgold);
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 35px;
+}
+
+.answer {
+  margin: 0;
+}
+
+.info {
+  text-align: center;
+}
+
+ul {
+  font-family: var(--Garamond) !important;
+  margin: 0px;
 }

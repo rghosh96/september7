@@ -257,7 +257,7 @@ function RSVP() {
          <br/>
    
          <p className="more-info1">Your RSVP has been submitted!</p>
-         <p className="more-info1">You will be getting a confirmation email with more details from Rashi within one week.</p>
+         <p className="more-info1">You will be getting a confirmation email with more details from <em>information@ortghoshwedding.com</em> within one week.</p>
        </div>
       ) : (
         <div className="RSVP">
@@ -266,7 +266,7 @@ function RSVP() {
           <br/>
           <br/>
           <br/>
-          <p className="loading">Submitting your RSVP...</p>
+          <p className="loading">Submitting your RSVP... (Please do not refresh -- this can take up to 30 seconds)</p>
         </div>
         
         <Border class="top-left border"/>
