@@ -1,27 +1,303 @@
-.RSVP {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white !important;
-    width: 100%;
-    height: 100%;
-  }
+.RSVP, .top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white !important;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px !important;
+}
 
-  .RSVP-title {
-    color: var(--satinsheetgold);
-    letter-spacing: 5px !important;
-  }
+.RSVP-title {
+  color: var(--satinsheetgold);
+  letter-spacing: 5px !important;
+}
 
-  .gold {
-    border-color: var(--satinsheetgold)
-  }
+.gold {
+  border-color: var(--satinsheetgold)
+}
 
-  .RSVP-subtitle {
-    font-family: var(--Garamond);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 13px;
-    color: var(--resedagreen);
-  }
+.RSVP-subtitle {
+  font-family: var(--Garamond);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  color: var(--resedagreen);
+}
+
+form {
+  display: relative;
+  flex-direction: column;
+  color: var(--grey);
+  font-family: var(--Garamond);
+  align-items: center;
+  justify-content: center;
+  width: 95%; /* Set your desired width */
+  max-height: 59% !important; /* Set your desired height */
+  overflow: scroll; /* Add scrolling when contents exceed the height */
+}
+
+
+label {
+  color: var(--grey);
+  font-family: var(--Garamond);
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+input::placeholder {
+  font-family: var(--Garamond);
+  font-style: italic; /* Specify any other desired font styles */
+  font-size: 15px;
+}
+
+input[type="text"] {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--grey);
+  font-family: var(--Allura);
+  text-align: center;
+  width: 250px;
+  font-size: 35px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 15px 0;
+}
+
+.more-info {
+  color: var(--resedagreen);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 25px !important;
+  text-align: center;
+}
+
+.more-info1 {
+  color: var(--resedagreen);
+  font-weight: 700;
+  font-size: 15px;
+  margin: 5px !important;
+  text-align: center;
+}
+
+.add {
+  color: var(--grey);
+  font-size: 15px;
+}
+
+.more-guests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label-heading {
+  color: var(--resedagreen);
+  text-transform: uppercase;
+}
+
+.label-subheading {
+  color: var(--resedagreen);
+  text-align: center;
+}
+
+.remove {
+  background-color: var(--resedagreen);
+  padding: 3px;
+  border-radius: 50%;
+  height: 23px;
+  width: 23px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--light);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.guest {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.dietary-option {
+  margin: 0px;
+  text-align: left;
+}
+
+input[type="email"] {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid var(--grey);
+  font-family: var(--Garamond);
+  text-align: center;
+  width: 250px !important;
+  font-size: 19px;
+}
+
+.simple-text {
+  font-family: var(--Garamond) !important;
+  font-size: 19px !important;
+  font-style: italic;
+}
+
+.symbol-divider {
+  color: var(--satinsheetgold);
+  text-align: center;
+}
+
+.submit-button, .modal-button {
+  background-color: var(--africanviolet);
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 11px;
+  text-align: center;
+}
+
+.center {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.modal-link {
+  font-family: var(--Garamond);
+  color: var(--satinsheetgold);
+  font-weight: 700;
+  margin: 5px;
+  font-size: 21px;
+  transition: .2s ease-in-out;
+}
+
+.modal-link:hover {
+  color: var(--fairytale);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  color: var(--resedagreen);
+  border-radius: 15px;
+  height: 65%;
+  overflow: scroll; /* Add scrolling when contents exceed the height */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.confirm-label {
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0px !important;
+  text-align: center;
+  font-size: 15px !important;
+  text-decoration: underline;
+}
+
+.confirm-item {
+  margin: 0px 0px 10px 0px !important;
+  text-align: center;
+}
+
+.confirm-item-list {
+  margin: 0px 0px 10px 0px !important;
+  font-family: var(--Garamond) !important;
+  font-size: 19px;
+}
+
+#loader {
+  height: 100%;
+  width: 100%;
+  display: none;
+  background-color: var(--light);
+  position: fixed;
+  top: 0;
+  z-index: 9999999999999999;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  color: var(--fairytale);
+  background:
+   radial-gradient(circle at 60% 65%, currentColor 62%, #0000 65%) top left,
+   radial-gradient(circle at 40% 65%, currentColor 62%, #0000 65%) top right,
+   linear-gradient(to bottom left, currentColor 42%,#0000 43%) bottom left ,
+   linear-gradient(to bottom right,currentColor 42%,#0000 43%) bottom right;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  /* Center the loader within its parent */
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading {
+
+  /* Center the loader within its parent */
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--resedagreen);
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  opacity: 0.4;
+  animation: l3 1s infinite;
+}
+@keyframes l3 {
+  to {transform:scale(1.8);opacity:0}
+}

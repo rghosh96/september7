@@ -286,43 +286,4 @@ button {
     height: 25px;
   }
 
-  .menu-toggle {
-    display: block; /* Display the hamburger icon on smaller screens */
-}
-
-.menu {
-    display: none; /* Hide the menu by default on smaller screens */
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-}
-
-.menu.active {
-    display: flex; /* Show the menu when active */
-}
-
-.menu li {
-    margin: 10px 0;
-}
-
-.menu a:hover {
-    color: #ff6600;
-}
-
-/* Style for the hamburger icon when active */
-.menu-toggle.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
 }
