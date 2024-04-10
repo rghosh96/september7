@@ -1,4 +1,8 @@
-.RSVP, .top {
+.top {
+  height: 100%;
+}
+
+.RSVP {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +14,7 @@
 }
 
 .RSVP.expanded {
-  margin-top: 85vh !important;
+  margin-top: 500px !important;
 }
 
 .RSVP-title {
