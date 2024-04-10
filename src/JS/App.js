@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes, Link, useLocation } from 'react-router-dom';
 import '../index.css';
 import Home from './components/Home';
 import Schedule from './components/Schedule';
@@ -27,12 +27,12 @@ const Modal = ({ isOpen, onClose }) => {
           <p className="modal-title">Navigation</p>
           <hr/>
           <br/>
-          <Link onClick={handleClose} className="modal-link" to='./'>home</Link>
-          <Link onClick={handleClose} className="modal-link" to="./rsvp">rsvp</Link>
-          <Link onClick={handleClose} className="modal-link" to='./information'>schedule</Link>
-          <Link onClick={handleClose} className="modal-link" to='./schedule'>information</Link>
-          <Link onClick={handleClose} className="modal-link" to='./registry'>registry</Link>
-          <Link onClick={handleClose} className="modal-link" to='./gallery'>faq</Link>
+          <Link onClick={handleClose} className="modal-link" to='/'>home</Link>
+          <Link onClick={handleClose} className="modal-link" to="/rsvp">rsvp</Link>
+          <Link onClick={handleClose} className="modal-link" to='/information'>schedule</Link>
+          <Link onClick={handleClose} className="modal-link" to='/schedule'>information</Link>
+          <Link onClick={handleClose} className="modal-link" to='/registry'>registry</Link>
+          <Link onClick={handleClose} className="modal-link" to='/gallery'>faq</Link>
         </div>
       </div>
     </div>
@@ -47,13 +47,13 @@ function Navigation() {
     <div className="navigation">
       <div className="nav-column">
       <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="./home">home</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="/">home</Link>
         </p>
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="./rsvp">rsvp</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="/rsvp">rsvp</Link>
         </p>
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./information'>schedule</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='/information'>schedule</Link>
         </p>
       </div>
 
@@ -65,13 +65,13 @@ function Navigation() {
 
       <div className="nav-column">
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./schedule'>information</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='/schedule'>information</Link>
         </p>
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./registry'>registry</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='/registry'>registry</Link>
         </p>
         <p className="nav-item">
-          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./gallery'>faq</Link>
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='/gallery'>faq</Link>
         </p>
       </div>
     </div>
@@ -119,17 +119,17 @@ const App = () => {
   }, []);
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
       {isMobile ? <NavigationMobile /> : <Navigation />}
         <Routes>
           <Route index element={<Home />} exact/>
-          <Route path="/schedule" element={<Schedule />}/>
-          <Route path="/information" element={<Information />}/>
-          <Route path="/gallery" element={<Gallery />}/>
-          <Route path="/rsvp" element={<RSVP />}/>
-          <Route path="/registry" element={<Registry />}/>
+          <Route exact path="/schedule" element={<Schedule />}/>
+          <Route exact path="/information" element={<Information />}/>
+          <Route exact path="/gallery" element={<Gallery />}/>
+          <Route exact path="/rsvp" element={<RSVP />}/>
+          <Route exact path="/registry" element={<Registry />}/>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
