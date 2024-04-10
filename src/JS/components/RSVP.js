@@ -293,8 +293,7 @@ function RSVP() {
         <h1 className="RSVP-title">RSVP</h1>
         <hr className="gold"/>
         <br/>
-        <br/>
-        <br/>
+
   
         <form onSubmit={handleSubmit}>
         <div className="form-section">

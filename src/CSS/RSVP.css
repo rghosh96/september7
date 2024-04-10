@@ -81,8 +81,8 @@ input[type="text"] {
 .more-info {
   color: var(--resedagreen);
   font-weight: 700;
-  font-size: 15px;
-  margin: 25px !important;
+  font-size: 15px !important;
+  margin: 15px !important;
   text-align: center;
 }
 
