@@ -45,7 +45,7 @@
     ),
     url('../assets/images/information.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
-  background-position: center 45%; /* Center the background image horizontally and vertically */
+  background-position: center 35%; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
   display: flex;

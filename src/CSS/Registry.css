@@ -1,0 +1,92 @@
+.Information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white !important;
+    width: 100%;
+    overflow: scroll;
+  }
+  
+  .nav-bg {
+    position: fixed;
+    width: 100%;
+    height: 105px;
+    background-color: var(--light);
+    z-index: 999999999;
+    border-bottom: 1px solid var(--resedagreen);
+    opacity: 0;
+    transition: .2s ease-in-out;
+  }
+  
+  .nav-bg.scroll {
+    opacity: 1 !important;
+  }
+  
+  .heading-area {
+    min-height: 500px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity for better visibility */
+    color: #ffffff !important; /* Optional: Set text color for better visibility */
+    z-index: 1; /* Ensure the heading-area is above other content */
+    width: 100%; /* Ensure the heading-area spans the full width */
+  }
+  
+  .bg-image-registry {
+    height: 100%; /* Adjusted to fill the entire height of the heading-area */
+    width: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, .5), 
+        rgba(0, 0, 0, .3), 
+        rgba(0, 0, 0, .3)
+      ),
+      url('../assets/images/registry.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Cover the entire container with the background image */
+    background-position: center 37%; /* Center the background image horizontally and vertically */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    color: #ffffff; /* Optional: Set text color for better visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .title-area {
+    margin-top: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content {
+    padding: 15px;
+    background-color: white;
+    width: 85%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .info {
+    text-align: center;
+  }
+
+  .registry-btn {
+    color: var(--satinsheetgold);
+    border-color: var(--satinsheetgold);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
+    transition: .2s ease-in-out
+  }
+
+  .registry-btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    color: var(--light) !important;
+  }

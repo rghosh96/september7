@@ -52,7 +52,7 @@
     ),
     url('../assets/images/schedule.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
-  background-position: center 75%; /* Center the background image horizontally and vertically */
+  background-position: center 55%; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
   display: flex;

@@ -5,6 +5,7 @@ import Schedule from './components/Schedule';
 import Information from './components/Information';
 import Gallery from './components/Gallery';
 import RSVP from './components/RSVP';
+import Registry from './components/Registry';
 import React, { useState, useEffect } from 'react';
 import { ReactComponent as WhiteLogo } from '../assets/WhiteLogo.svg';
 import { ReactComponent as GoldLogo } from '../assets/GoldLogo.svg';
@@ -30,8 +31,8 @@ const Modal = ({ isOpen, onClose }) => {
           <Link onClick={handleClose} className="modal-link" to="./rsvp">rsvp</Link>
           <Link onClick={handleClose} className="modal-link" to='./information'>schedule</Link>
           <Link onClick={handleClose} className="modal-link" to='./schedule'>information</Link>
+          <Link onClick={handleClose} className="modal-link" to='./registry'>registry</Link>
           <Link onClick={handleClose} className="modal-link" to='./gallery'>faq</Link>
-          <button onClick={onClose}>Close</button>
         </div>
       </div>
     </div>
@@ -45,6 +46,9 @@ function Navigation() {
   return (
     <div className="navigation">
       <div className="nav-column">
+      <p className="nav-item">
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="./home">home</Link>
+        </p>
         <p className="nav-item">
           <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to="./rsvp">rsvp</Link>
         </p>
@@ -62,6 +66,9 @@ function Navigation() {
       <div className="nav-column">
         <p className="nav-item">
           <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./schedule'>information</Link>
+        </p>
+        <p className="nav-item">
+          <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./registry'>registry</Link>
         </p>
         <p className="nav-item">
           <Link style={{ color: location.pathname === '/' ? 'var(--light)' : 'var(--satinsheetgold)' }} to='./gallery'>faq</Link>
@@ -120,6 +127,7 @@ const App = () => {
           <Route path="/information" element={<Information />}/>
           <Route path="/gallery" element={<Gallery />}/>
           <Route path="/rsvp" element={<RSVP />}/>
+          <Route path="/registry" element={<Registry />}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -130,6 +130,7 @@ hr {
   transform: scale(1.1);
   letter-spacing: 3px;
   cursor: pointer;
+  border-bottom: 1px solid var(--light);
 }
 
 a {
@@ -221,7 +222,7 @@ a {
 }
 
 .modal-link:hover {
-  color: var(--fairytale);
+  color: var(--resedagreen);
   cursor: pointer;
   transform: scale(1.1);
 }
