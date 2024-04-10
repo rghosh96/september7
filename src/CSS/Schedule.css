@@ -2,19 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: white !important;
   width: 100%;
-  overflow-x: hidden; /* Ensure horizontal overflow is hidden */
-  overflow-y: auto; /* Allow vertical scrolling for content */
+  overflow: scroll;
+}
+
+.nav-bg {
+  position: fixed;
+  width: 100%;
+  height: 105px;
+  background-color: var(--light);
+  z-index: 999999999;
+  border-bottom: 1px solid var(--resedagreen);
+  opacity: 0;
+  transition: .2s ease-in-out;
+}
+
+.nav-bg.scroll {
+  opacity: 1 !important;
 }
 
 .heading-area {
-  position: fixed; /* Fix the heading area at the top */
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 55vh;
+  height: 500px !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +36,13 @@
 }
 
 .title-area {
-  margin-top: 95px;
+  margin-top: 105px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .bg-image-schedule {
-  position: absolute; /* Position the background image absolutely */
-  top: 0;
-  left: 0;
   height: 100%; /* Adjusted to fill the entire height of the heading-area */
   width: 100%;
   background: linear-gradient(
@@ -42,23 +52,23 @@
     ),
     url('../assets/images/schedule.jpg'); /* Replace 'path/to/your-image.jpg' with the actual path to your image */
   background-size: cover; /* Cover the entire container with the background image */
-  background-position: center; /* Center the background image horizontally and vertically */
+  background-position: center 75%; /* Center the background image horizontally and vertically */
   background-repeat: no-repeat; /* Prevent background image from repeating */
   color: #ffffff; /* Optional: Set text color for better visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
-  margin-top: 55vh; /* Adjust to the height of heading-area */
   padding: 15px;
   background-color: white;
   width: 85%;
   color: black;
-  display: block;
+  display: flex;
   flex-direction: column;
-  overflow: scroll;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .info {
@@ -110,4 +120,11 @@
 
 ul {
   text-align: left !important;
+}
+
+@media (min-width: 800px) {
+  .heading-area {
+    min-height: 700px !important;
+  }
+
 }

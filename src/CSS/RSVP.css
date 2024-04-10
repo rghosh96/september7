@@ -9,6 +9,10 @@
   margin-top: 50px !important;
 }
 
+.RSVP.expanded {
+  margin-top: 85vh !important;
+}
+
 .RSVP-title {
   color: var(--satinsheetgold);
   letter-spacing: 5px !important;
@@ -28,15 +32,12 @@
 }
 
 form {
-  display: relative;
   flex-direction: column;
   color: var(--grey);
   font-family: var(--Garamond);
   align-items: center;
   justify-content: center;
   width: 95%; /* Set your desired width */
-  max-height: 59% !important; /* Set your desired height */
-  overflow: scroll; /* Add scrolling when contents exceed the height */
 }
 
 
@@ -173,7 +174,7 @@ input[type="email"] {
 } 
 
 .center {
-  margin: 15px;
+  margin: 15px 15px 105px 15px;
   display: flex;
   justify-content: center;
 }
@@ -209,15 +210,17 @@ input[type="email"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999999999999999999;
 }
 
 .modal {
   background-color: white;
-  padding: 20px;
+  padding: 11px;
   color: var(--resedagreen);
   border-radius: 15px;
   height: 65%;
   overflow: scroll; /* Add scrolling when contents exceed the height */
+  margin: 15px;
 }
 
 .modal-content {
@@ -287,14 +290,16 @@ input[type="email"] {
 }
 
 .loading {
-
   /* Center the loader within its parent */
   position: absolute;
   top: 47%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--resedagreen);
+  text-align: center;
+  font-weight: 700;
 }
+
 
 .loader:after {
   content: "";
@@ -306,4 +311,27 @@ input[type="email"] {
 }
 @keyframes l3 {
   to {transform:scale(1.8);opacity:0}
+}
+
+.nav-bg {
+  position: fixed;
+  width: 100%;
+  height: 105px;
+  background-color: var(--light);
+  z-index: 999999999;
+  border-bottom: 1px solid var(--resedagreen);
+  opacity: 0;
+  transition: .2s ease-in-out;
+  top: 0;
+}
+
+.nav-bg.scroll {
+  opacity: 1;
+}
+
+@media (min-width: 800px) {
+  .nav-bg {
+    height: 155px !important;
+  }
+
 }

@@ -81,7 +81,7 @@ const NavigationMobile = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <div className="navigation-mobile">
+    <div  className='navigation-mobile'>
        <a className="nav-mobile" href="/">
        {location.pathname === '/' ? <WhiteLogo className="logo-mobile"/> : <GoldLogo className="logo-mobile"/> }
         </a>
@@ -96,7 +96,7 @@ const App = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the threshold as needed
+      setIsMobile(window.innerWidth <= 800); // Adjust the threshold as needed
     };
 
     // Add event listener for window resize

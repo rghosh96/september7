@@ -1,15 +1,27 @@
 import '../../CSS/Gallery.css';
+import React, { useState, useEffect } from 'react';
 
 function Gallery() {
+  const [scroll, setScroll] = useState(false);
+  const handleScroll = (event) => {
+    console.log('User scrolled!', event.target.scrollTop);
+    if (event.target.scrollTop > 400){
+      setScroll(true)
+      console.log("SET TO TRUE")
+    } else {
+      setScroll(false)
+    }
+   
+  };
   return (
-    <div className="Gallery">
-
-      <div className="heading-area">
-        <div className="bg-image-gallery"></div>
-
+    <div onScroll={handleScroll} className="Gallery">
+      <div className={`nav-bg ${scroll ? 'scroll' : ''}`}></div>
+       <div className="heading-area">
+        <div className="bg-image-gallery">
         <div className="title-area">
-          <h1 className="title">FAQ</h1>
-          <hr/>
+            <h1 className="title">FAQ</h1>
+            <hr/>
+        </div>
         </div>
       </div>
 

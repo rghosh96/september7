@@ -46,6 +46,7 @@
   align-items: center;
   text-align: center;
   z-index: 99999;
+  font-weight: 700;
 }
 
 .small {
@@ -90,6 +91,30 @@ h3 {
   animation: rotate 3s;
 }
 
+.RSVP-btn {
+  margin-top: 45px;
+  border: 2px solid; /* Set initial border to transparent */
+  border-radius: 10px; /* Adjust as needed */
+  padding: 10px; /* Adjust as needed */
+  box-shadow: 0 0 7px var(--satinsheetgold); /* Set initial shadow color and size */
+  transition: box-shadow 0.3s ease; /* Add transition effect */
+  /* Additional styling */
+  background-color: #00000000; /* Background color of the element */
+  color: var(--satinsheetgold); /* Text color */
+  transition: .2s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.RSVP-btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  color: white;
+}
+
 
 @keyframes lineDraw {
   0% {
@@ -101,7 +126,7 @@ h3 {
 }
 
 
-@media (min-width: 280px) and (max-width: 624px) {
+@media (min-width: 280px) and (max-width: 800px) {
   h2 {
     font-size: 25px;
   }
@@ -118,8 +143,8 @@ h3 {
   }
 
   .border {
-    height: 75px !important;
-    width: 75px !important;
+    height: 95px !important;
+    width: 95px !important;
   }
 
   @keyframes lineDraw {

@@ -2,6 +2,7 @@ import '../../CSS/Home.css';
 import '../CountdownTimer'
 import CountdownTimer from '../CountdownTimer';
 import { ReactComponent as Border } from '../../assets/WhiteBorder.svg'
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -14,6 +15,9 @@ function Home() {
         <h1 className="title">Rashi & Gabriel</h1>
     
         <CountdownTimer />
+        <Link to="./rsvp">
+          <button className="RSVP-btn">RSVP Now!</button>
+        </Link>
        
       </div>
 

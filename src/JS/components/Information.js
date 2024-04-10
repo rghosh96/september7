@@ -1,20 +1,33 @@
 import '../../CSS/Information.css';
+import React, { useState, useEffect } from 'react';
 
 function Information() {
+  const [scroll, setScroll] = useState(false);
+  const handleScroll = (event) => {
+    console.log('User scrolled!', event.target.scrollTop);
+    if (event.target.scrollTop > 400){
+      setScroll(true)
+      console.log("SET TO TRUE")
+    } else {
+      setScroll(false)
+    }
+   
+  };
+
   return (
-    <div className="Information">
-
-      <div className="heading-area">
-        <div className="bg-image-information"></div>
-
+    <div onScroll={handleScroll} className="Information">
+      <div className={`nav-bg ${scroll ? 'scroll' : ''}`}></div>
+       <div className="heading-area">
+        <div className="bg-image-information">
         <div className="title-area">
-          <h1 className="title">Schedule</h1>
-          <hr/>
+            <h1 className="title">Schedule</h1>
+            <hr/>
+        </div>
         </div>
       </div>
 
       <div className="content">
-          <p className="info">Here we provide the schedule of events. Times are in Central Time Zone (CST). Our special day starts at 12pm and goes until 11pm. All our events will be held at one location! For more information on the venue, please visit the Information page. Note: This schedule is subject to change.</p>
+          <p className="info">Here we provide the schedule of events for September 7, 2024. Times are in Central Time Zone (CST). Our special day starts at 12pm and goes until 11pm. All our events will be held at one location! For more information on the venue, please visit the Information page. Note: This schedule is subject to change.</p>
           <div className="symbol-divider">─ ❧ ─</div>
           <div className="event-container">
             <p className="event-time">12:00pm - 2:00pm</p>

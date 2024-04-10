@@ -101,6 +101,19 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
 };
 
 function RSVP() {
+
+  const [scroll, setScroll] = useState(false);
+  const handleScroll = (event) => {
+    console.log('User scrolled!', event.target.scrollTop);
+    if (event.target.scrollTop > 400){
+      setScroll(true)
+      console.log("SET TO TRUE")
+    } else {
+      setScroll(false)
+    }
+   
+  };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -236,13 +249,14 @@ function RSVP() {
   return (
     <div className="top">
       {submitted ? (
-         <div className="RSVP">
+         <div onScroll={handleScroll} className="RSVP">
+           <div className="nav-bg"></div>
          <div id="loader">
            <div className="loader"></div>
            <br/>
            <br/>
            <br/>
-           <p className="loading">Submitting your RSVP...</p>
+           <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
          </div>
          
          <Border class="top-left border"/>
@@ -258,15 +272,17 @@ function RSVP() {
    
          <p className="more-info1">Your RSVP has been submitted!</p>
          <p className="more-info1">You will be getting a confirmation email with more details from <em>information@ortghoshwedding.com</em> within one week.</p>
+         <p className="more-info1">In the meantime, please visit our Schedule, Information, and FAQ pages!!</p>
        </div>
       ) : (
-        <div className="RSVP">
+        <div onScroll={handleScroll} className={`RSVP ${['accept', 'tentative'].includes(response)? 'expanded' : ''}`}>
+           <div className={`nav-bg ${['accept', 'tentative'].includes(response) ? 'scroll' : ''}`}></div>
         <div id="loader">
           <div className="loader"></div>
           <br/>
           <br/>
           <br/>
-          <p className="loading">Submitting your RSVP... (Please do not refresh -- this can take up to 30 seconds)</p>
+          <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
         </div>
         
         <Border class="top-left border"/>

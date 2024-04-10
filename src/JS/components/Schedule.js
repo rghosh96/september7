@@ -1,15 +1,30 @@
 import '../../CSS/Schedule.css';
+import React, { useState, useEffect } from 'react';
+
 
 function Schedule() {
+  const [scroll, setScroll] = useState(false);
+  const handleScroll = (event) => {
+    console.log('User scrolled!', event.target.scrollTop);
+    if (event.target.scrollTop > 400){
+      setScroll(true)
+      console.log("SET TO TRUE")
+    } else {
+      setScroll(false)
+    }
+   
+  };
+
   return (
-    <div className="Schedule">
+    <div onScroll={handleScroll} className="Schedule">
 
-      <div className="heading-area">
-        <div className="bg-image-schedule"></div>
-
+      <div className={`nav-bg ${scroll ? 'scroll' : ''}`}></div>
+       <div className="heading-area">
+        <div className="bg-image-schedule">
         <div className="title-area">
-          <h1 className="title">Information</h1>
-          <hr/>
+            <h1 className="title">Information</h1>
+            <hr/>
+        </div>
         </div>
       </div>
 
@@ -83,13 +98,12 @@ function Schedule() {
           <p className="info-label location">Outdoors</p>
           <ul>
             <li>Devil's Den State Park ♥</li>
-            <li>Whitaker Point (Hawksbill Craig) ♥</li>
+            <li>Whitaker Point (also known as Hawksbill Craig) ♥</li>
             <li>Hobbs State Park</li>
             <li>Buffalo National River</li>
             <li>Kessler Mountain Regional Park</li>
           </ul>
           <br/>
-
 
       </div>
 
