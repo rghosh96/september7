@@ -291,6 +291,7 @@ function RSVP() {
         <Border class="bottom-right border"/>
   
         <h1 className="RSVP-title">RSVP</h1>
+        <p className="RSVP-by">Please RSVP by July 31</p>
         <hr className="gold"/>
         <br/>
 

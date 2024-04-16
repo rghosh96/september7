@@ -21,6 +21,14 @@
   letter-spacing: 5px !important;
 }
 
+.RSVP-by {
+  color: var(--satinsheetgold);
+  margin: 0 0 15px 0;
+  font-size: 15px !important;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .gold {
   border-color: var(--satinsheetgold)
 }

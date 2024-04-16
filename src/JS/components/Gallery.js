@@ -29,6 +29,21 @@ function Gallery() {
           <p className="info">Here we answer some common questions we have been getting from friends and family! If you still have questions, please email information@ortghoshwedding.com</p>
           
           <div className="q-and-a">
+            <h3 className="question">Q: When should I RSVP by?</h3>
+            <p className="answer">A: Please RSVP by July 31 so we can plan accordingly.</p>
+          </div>
+
+          <div className="q-and-a">
+            <h3 className="question">Q: If I'm allows to bring a guest, but don't know who yet, can I go ahead and RSVP?</h3>
+            <p className="answer">A: We strongly recommend waiting to RSVP until you know who you will bring. This will make planning go more smoothly!</p>
+          </div>
+
+          <div className="q-and-a">
+            <h3 className="question">Q: What is the dress code/attire?</h3>
+            <p className="answer">A: We encourage guests to dress: cocktail, semi-formal/dressy-casual, or festive!</p>
+          </div>
+
+          <div className="q-and-a">
             <h3 className="question">Q: Is this an Indian/Hindu-style wedding or American/Western-style wedding?</h3>
             <p className="answer">A: It's kind of a fusion, but mostly Indian/Hindu! The ceremony will be a Hindu ceremony.</p>
           </div>
