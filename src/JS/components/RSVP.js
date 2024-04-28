@@ -155,6 +155,10 @@ function RSVP() {
       infoArray[3] = '-'
     }
 
+    if (infoArray[6] === "") {
+      infoArray[6] = '-'
+    }
+
     // Create a new Date object
     const currentDate = new Date();
 
