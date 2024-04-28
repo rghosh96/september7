@@ -24,16 +24,8 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
   infoArray.push(songRequests.join(", "))
   console.log(infoArray)
 
+
   if (!isOpen) return null;
-
-  const formatPreference = (preference) => {
-    // Split the preference string at every capital letter
-    // and join the resulting array with spaces
-    preference = preference.replace(/([A-Z])/g, ' $1').trim();
-
-    // Capitalize the first letter of each word
-    return preference.replace(/\b\w/g, (char) => char.toUpperCase());
-  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -56,7 +48,7 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
             <p className="confirm-label">Your Email</p>
             <p className="confirm-item">{email}</p>
           </div>
-          <div className="confirmation-item-group" style={{ display: ['accept', 'tentative'].includes(response) ? 'block' : 'none' }}>
+          <div className="confirmation-item-group" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'block' : 'none' }}>
             <p className="confirm-label">Additional People in Your Party</p>
             <ul className="confirm-item-list">
               {additionalNames.map((name, index) => (
@@ -64,24 +56,24 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
               ))}
             </ul>
           </div>
-          <div className="confirmation-item-group" style={{ display: ['accept', 'tentative'].includes(response) ? 'block' : 'none' }}>
+          <div className="confirmation-item-group" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'block' : 'none' }}>
             <p className="confirm-label">Dietary Preferences & Restrictions</p>
             <ul className="confirm-item-list">
               {/* Render true preferences */}
               {truePreferences.map((preference, index) => (
                 <li key={index}>
-                  {preference === 'notListed' ? (
+                  {preference === 'Not Listed:' ? (
                     <>
-                      {formatPreference(preference)} - {notListedPreference}
+                      {preference} {notListedPreference}
                     </>
                   ) : (
-                    formatPreference(preference)
+                    preference
                   )}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="confirmation-item-group" style={{ display: ['accept', 'tentative'].includes(response) ? 'block' : 'none' }}>
+          <div className="confirmation-item-group" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'block' : 'none' }}>
             <p className="confirm-label">Song Requests</p>
             <ul className="confirm-item-list">
               {songRequests.map((song, index) => (
@@ -93,7 +85,8 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
           <br/>
           <button className="modal-button" onClick={onClose}>Edit RSVP</button>
           <br/>
-          <button className="modal-button" onClick={() => { logToGSheets(infoArray); handleClose(); }}>Submit RSVP</button>
+          {/* <button className="modal-button" onClick={() => { logToGSheets(infoArray); handleClose(); }}>Submit RSVP</button> */}
+          <button className="modal-button" onClick={() => { logToGSheets(infoArray) }}>Submit RSVP</button>
         </div>
       </div>
     </div>
@@ -127,24 +120,40 @@ function RSVP() {
   const [songRequests, setSongRequests] = useState(['']);
   const [additionalNames, setAdditionalNames] = useState(['']);
   const [dietaryPreferences, setDietaryPreferences] = useState({
-    vegetarian: false,
-    vegan: false,
-    glutenAllergy: false,
-    noDairy: false,
-    noBeef: false,
-    noPork: false,
-    peanutAllergy: false,
-    shellfishAllergy: false,
-    lowCarb: false,
-    notListed: false
+    "Vegetarian": false,
+    "Vegan": false,
+    "Gluten Allergy": false,
+    "No Dairy": false,
+    "No Beef": false,
+    "No Pork": false,
+    "Peanut Allergy": false,
+    "Shellfish Allergy": false,
+    "Low Carb": false,
+    "Not Listed:": false
   });
+  
 
   const logToGSheets = (infoArray) => {
     console.log('logging to gsheets!');
 
+    console.log(infoArray[4])
+    let altered = JSON.parse(infoArray[4])
+    console.log(altered)
+
+    infoArray[4] = altered.join(", ")
+    console.log(infoArray)
+
     let info = [
       infoArray
     ]
+
+    if (infoArray[5] === "") {
+      infoArray[5] = '-'
+    }
+
+    if (infoArray[3] === "") {
+      infoArray[3] = '-'
+    }
 
     // Create a new Date object
     const currentDate = new Date();
@@ -275,8 +284,8 @@ function RSVP() {
          <p className="more-info1">In the meantime, please visit our Schedule, Information, and FAQ pages!!</p>
        </div>
       ) : (
-        <div onScroll={handleScroll} className={`RSVP ${['accept', 'tentative'].includes(response)? 'expanded' : ''}`}>
-           <div className={`nav-bg ${['accept', 'tentative'].includes(response) ? 'scroll' : ''}`}></div>
+        <div onScroll={handleScroll} className={`RSVP ${['Accept', 'Tentative'].includes(response)? 'expanded' : ''}`}>
+           <div className={`nav-bg ${['Accept', 'Tentative'].includes(response) ? 'scroll' : ''}`}></div>
         <div id="loader">
           <div className="loader"></div>
           <br/>
@@ -323,8 +332,8 @@ function RSVP() {
               <input
                 type="radio"
                 name="response"
-                value="accept"
-                checked={response === 'accept'}
+                value="Accept"
+                checked={response === 'Accept'}
                 onChange={(e) => setResponse(e.target.value)}
               />
               Joyfully <i>accepts</i>
@@ -333,8 +342,8 @@ function RSVP() {
               <input
                 type="radio"
                 name="response"
-                value="decline"
-                checked={response === 'decline'}
+                value="Decline"
+                checked={response === 'Decline'}
                 onChange={(e) => setResponse(e.target.value)}
               />
               Respectfully <i>declines</i>
@@ -343,14 +352,14 @@ function RSVP() {
               <input
                 type="radio"
                 name="response"
-                value="tentative"
-                checked={response === 'tentative'}
+                value="Tentative"
+                checked={response === 'Tentative'}
                 onChange={(e) => setResponse(e.target.value)}
               />
               Is <i>tentative</i>
             </label>
           </div>
-          <div className="more-guests" style={{ display: ['accept', 'tentative'].includes(response)? 'flex' : 'none' }}>
+          <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response)? 'flex' : 'none' }}>
             <br/>
             <div className="symbol-divider">─ ❧ ─</div>
             <br/>
@@ -368,7 +377,7 @@ function RSVP() {
             ))}
             <button className="add" onClick={handleAddNameField}>+ Add Guest</button>
           </div>
-          <div className="form-section" style={{ display: ['accept', 'tentative'].includes(response) ? 'flex' : 'none' }}>
+          <div className="form-section" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
             <br/>
             <div className="symbol-divider">─ ❧ ─</div>
             <br/>
@@ -376,7 +385,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="vegetarian"
+                name="Vegetarian"
                 checked={dietaryPreferences.vegetarian}
                 onChange={handleDietaryPreferenceChange}
               /> Vegetarian
@@ -384,7 +393,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="vegan"
+                name="Vegan"
                 checked={dietaryPreferences.vegan}
                 onChange={handleDietaryPreferenceChange}
               /> Vegan
@@ -392,7 +401,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="glutenAllergy"
+                name="Gluten Allergy"
                 checked={dietaryPreferences.glutenAllergy}
                 onChange={handleDietaryPreferenceChange}
               /> No Gluten
@@ -400,7 +409,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="noDairy"
+                name="No Dairy"
                 checked={dietaryPreferences.noDairy}
                 onChange={handleDietaryPreferenceChange}
               /> No Dairy
@@ -408,7 +417,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="noBeef"
+                name="No Beef"
                 checked={dietaryPreferences.noBeef}
                 onChange={handleDietaryPreferenceChange}
               /> No Beef
@@ -416,7 +425,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="noPork"
+                name="No Pork"
                 checked={dietaryPreferences.noPork}
                 onChange={handleDietaryPreferenceChange}
               /> No Pork
@@ -424,7 +433,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="peanutAllergy"
+                name="Peanut Allergy"
                 checked={dietaryPreferences.peanutAllergy}
                 onChange={handleDietaryPreferenceChange}
               /> Peanut Allergy
@@ -432,7 +441,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="shellfishAllergy"
+                name="Shellfish Allergy"
                 checked={dietaryPreferences.shellfishAllergy}
                 onChange={handleDietaryPreferenceChange}
               /> Shellfish Allergy
@@ -440,7 +449,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="lowCarb"
+                name="Low Carb"
                 checked={dietaryPreferences.lowCarb}
                 onChange={handleDietaryPreferenceChange}
               /> Low Carb
@@ -449,7 +458,7 @@ function RSVP() {
             <label className="dietary-option">
               <input
                 type="checkbox"
-                name="notListed"
+                name="Not Listed:"
                 checked={dietaryPreferences.notListed}
                 onChange={handleDietaryPreferenceChange}
               /> Not listed:
@@ -461,7 +470,7 @@ function RSVP() {
               onChange={(e) => setNotListedPreference(e.target.value)}
             />
           </div>
-          <div className="more-guests" style={{ display: ['accept', 'tentative'].includes(response) ? 'flex' : 'none' }}>
+          <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
             <br/>
             <div className="symbol-divider">─ ❧ ─</div>
             <br/>
@@ -480,11 +489,11 @@ function RSVP() {
             ))}
             <button className="add" onClick={handleAddSongRequest}>+ Add Song</button>
           </div>
-          <div className="center"  style={{ display: ['accept', 'tentative', 'decline'].includes(response) ? 'flex' : 'none' }}>
+          <div className="center"  style={{ display: ['Accept', 'Tentative', 'Decline'].includes(response) ? 'flex' : 'none' }}>
             <button className="submit-button" >Confirm RSVP</button>
           </div>
       </form>
-      <p style={{ display: ['accept', 'decline', 'tentative'].includes(response) ? 'none' : 'block' }} className='more-info'>Please only enter one name from your party. You will be able to add more people later. :)</p>
+      <p style={{ display: ['Accept', 'Decline', 'Tentative'].includes(response) ? 'none' : 'block' }} className='more-info'>Please only enter one name from your party. You will be able to add more people later. :)</p>
       <Modal isOpen={isModalOpen} onClose={closeModal} name={name} response={response} email={email} additionalNames={additionalNames} dietaryPreferences={dietaryPreferences} notListedPreference={notListedPreference} songRequests={songRequests} logToGSheets={logToGSheets} />
       </div>
       )}
