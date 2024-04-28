@@ -147,6 +147,10 @@ function RSVP() {
       infoArray
     ]
 
+    if (infoArray[4] === "") {
+      infoArray[4] = '-'
+    }
+
     if (infoArray[5] === "") {
       infoArray[5] = '-'
     }
