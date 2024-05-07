@@ -123,6 +123,15 @@ input[type="text"] {
   text-align: center;
 }
 
+.label-subheading-note {
+  color: var(--resedagreen);
+  text-align: center;
+  font-style: italic;
+  color: var(--grey);
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+
 .remove {
   background-color: var(--resedagreen);
   padding: 3px;

@@ -389,7 +389,8 @@ function RSVP() {
             <br/>
             <div className="symbol-divider">─ ❧ ─</div>
             <br/>
-            <label className="label-subheading">Are there any dietary restrictions/preferences? Please select all that apply:</label>
+            <label className="label-subheading">Are there any dietary restrictions/preferences in your party? Please select all that apply:</label>
+            <label className="label-subheading-note">*Note: We cannot guarantee we will be able to accommodate all dietary restrictions/preferences in our buffet-style reception dinner, but will do our best!</label>
             <label className="dietary-option">
               <input
                 type="checkbox"
