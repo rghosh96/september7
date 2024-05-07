@@ -20,7 +20,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: white;
+  background-color: var(--light);
 }
 
 code {
@@ -59,7 +59,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
+  background-color: var(--light);
   height: 100vh;
   opacity: 1;
   color: #ffffff !important; /* Optional: Set text color for better visibility */
@@ -240,7 +240,7 @@ a {
 }
 
 .modal-nav {
-  background-color: white;
+  background-color: var(--light);
   padding: 20px;
   color: var(--resedagreen);
   border-radius: 15px;
