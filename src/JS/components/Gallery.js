@@ -92,13 +92,24 @@ function Gallery() {
                 </li>
             </ul>
 
-            <p className='answer'>Websites:</p>
+            <p className='answer'>Websites to Rent:</p>
             <ul>
-                <li><a href="https://www.utsavfashion.com/">Utsav Fasion</a> (*we have ordered from before)</li>
-                <li><a href="https://www.manyavar.com/en-us">Manyavar</a> (*we have ordered from before)</li>
-                <li><a href="https://www.kalkifashion.com/">Kalki Fashion</a></li>
-                <li><a href="https://www.perniaspopupshop.com/">Pernias Popup Shop</a></li>
-                <li><a href="https://aashniandco.com/">Aashni and Co</a></li>
+                <li><a className="info-link" href="https://www.almaripret.com/" target="_blank" rel="noopener noreferrer">Almari Pret</a></li>
+                <li><a className="info-link" href="https://preserve.rent/" target="_blank" rel="noopener noreferrer">Preserve</a></li>
+                <li><a className="info-link" href="https://bollywoodborrowed.com/" target="_blank" rel="noopener noreferrer">Bollywood Borrowed</a></li>
+            </ul>
+
+            <p className='answer'>Websites to Buy:</p>
+            <ul>
+                <li><a className="info-link" href="https://www.utsavfashion.com/" target="_blank" rel="noopener noreferrer">Utsav Fasion</a> (*we have ordered from before)</li>
+                <li><a className="info-link" href="https://www.manyavar.com/en-us" target="_blank" rel="noopener noreferrer">Manyavar</a> (*we have ordered from before)</li>
+                <li><a className="info-link" href="https://www.kalkifashion.com/" target="_blank" rel="noopener noreferrer">Kalki Fashion</a></li>
+                <li><a className="info-link" href="https://www.perniaspopupshop.com/" target="_blank" rel="noopener noreferrer">Pernias Popup Shop</a></li>
+                <li><a className="info-link" href="https://www.lashkaraa.com/" target="_blank" rel="noopener noreferrer">Lashkaara</a></li>
+                <li><a className="info-link" href="https://www.houseofindya.com/" target="_blank" rel="noopener noreferrer">Indya</a></li>
+                <li><a className="info-link" href="https://www.cbazaar.com/" target="_blank" rel="noopener noreferrer">Cbazaar</a></li>
+                <li><a className="info-link" href="https://www.mirraw.com/" target="_blank" rel="noopener noreferrer">Mirraw</a></li>
+                <li><a className="info-link" href="https://aashniandco.com/" target="_blank" rel="noopener noreferrer">Aashni and Co</a></li>
             </ul>
           </div>
           

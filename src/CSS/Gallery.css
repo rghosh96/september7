@@ -98,6 +98,12 @@
   text-align: center;
 }
 
+.info-link {
+  color: var(--africanviolet);
+  font-family: var(--Garamond);
+  font-weight: 700;
+}
+
 ul {
   font-family: var(--Garamond) !important;
   margin: 0px;

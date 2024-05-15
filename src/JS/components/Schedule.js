@@ -49,6 +49,7 @@ function Schedule() {
           <p className="info-section-title">Accomodations</p>
           <br/>
           <p className="info-details">We recommend looking into AirBnB's in the area! Here's some suggestions, information, and initial search links to help you get started.</p>
+          <p className="info-details"><strong>*Note:</strong> We are currently in the process of blocking out hotel rooms, so check back regularly for updates!</p>
           <br/>
           <p className="info-label location">Centerton, AR</p>
           <p className="info-details location-details">If you’d like something closer to the venue, there are beautiful, relaxing homes in Centerton, just a few minutes away. </p>
@@ -71,8 +72,8 @@ function Schedule() {
           <br/>
           <p className="info-label location">Resources</p>
           <ul>
-            <li><a href="https://www.discoverbellavistaar.com/">Click here to learn about things to do in Bella Vista!</a></li>
-            <li><a href="https://www.visitbentonville.com/">Click here to learn about things to do in Bentonville!</a></li>
+            <li><a className="info-link" href="https://www.discoverbellavistaar.com/">Click here to learn about things to do in Bella Vista!</a></li>
+            <li><a className="info-link" href="https://www.visitbentonville.com/">Click here to learn about things to do in Bentonville!</a></li>
           </ul>
           <br/>
           <p className="info-label location">Culture</p>
