@@ -288,7 +288,7 @@ function RSVP() {
          <br/>
    
          <p className="more-info1">Your RSVP has been submitted!</p>
-         <p className="more-info1">You will be getting a confirmation email with more details from <em>information@ortghoshwedding.com</em> within one week.</p>
+         <p className="more-info1">You will be getting a confirmation email with your RSVP details within a few minutes! <em>Please be sure to check your spam/junk folder.</em></p>
          <p className="more-info1">In the meantime, please visit our Schedule, Information, and FAQ pages!!</p>
        </div>
       ) : (
