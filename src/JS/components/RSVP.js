@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
           <p className="modal-title">Confirm</p>
           <hr/>
           <br/>
-          <p className='more-info'>Please review your RSVP below to make sure everything looks good before submitting!</p>
+          <p className='more-info'>Please review your RSVP below to make sure everything looks good before submitting! Note: you may have to scroll down to see the "Submit" button.</p>
           <div className="confirmation-item-group">
             <p className="confirm-label">Your Name</p>
             <p className="confirm-item">{name}</p>
