@@ -46,10 +46,9 @@ function Schedule() {
           <p className="info-details">Northwest Arkansas National Airport (XNA)</p>
 
           <div className="symbol-divider">─ ❧ ─</div>
-          <p className="info-section-title">Accomodations</p>
+          <p className="info-section-title">Accomodations - AirBnBss</p>
           <br/>
           <p className="info-details">We recommend looking into AirBnB's in the area! Here's some suggestions, information, and initial search links to help you get started.</p>
-          <p className="info-details"><strong>*Note:</strong> We are currently in the process of blocking out hotel rooms, so check back regularly for updates!</p>
           <br/>
           <p className="info-label location">Centerton, AR</p>
           <p className="info-details location-details">If you’d like something closer to the venue, there are beautiful, relaxing homes in Centerton, just a few minutes away. </p>
@@ -64,7 +63,17 @@ function Schedule() {
           <p className="info-label location">Bella Vista, AR</p>
           <p className="info-details location-details">AirBnBs in Bella Vista are ~15 minutes from the wedding venue. Stay in a beautiful lake home or a cozy cabin nestled alongside many bike trails!</p>
           <a className="info-link" href="https://www.airbnb.com/s/Bella-Vista--AR/homes?place_id=ChIJZ0n6p3ADyYcRUzXYull8pkk&refinement_paths%5B%5D=%2Fhomes&checkin=2024-09-04&checkout=2024-09-08&date_picker_type=calendar&adults=5&children=0&infants=0&pets=0&search_type=AUTOSUGGEST">Click here to search for AirBnB's in Bella Vista!</a>
-        
+
+          <div className="symbol-divider">─ ❧ ─</div>
+          <p className="info-section-title">Accomodations - Hotels</p>
+          <br/>
+          <p className="info-details">For accommodations, we also have a few rooms blocked out for your visit!</p>
+          <br/>
+          <p className="info-label location">Four Points by Sheraton</p>
+          <p className="info-details location-details">This hotel is located in Bentonville, AR, and is about 15 minutes away from the venue. We have 10 rooms blocked out at this hotel from Thursday September 6 - Sunday September 8, so there is <strong>limited availability</strong>. If you're interested, <strong>you must book this hotel by July 26th.</strong> Please use the link below to get our special group rate!</p>
+          <a className="info-link" href="https://www.marriott.com/events/start.mi?id=1717102488138&key=GRP">Click here to book Four Points by Sheraton!</a>
+          <br/>
+
           <div className="symbol-divider">─ ❧ ─</div>
           <p className="info-section-title">Things to Do</p>
           <br/>
