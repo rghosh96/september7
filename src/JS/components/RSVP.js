@@ -371,7 +371,7 @@ function RSVP() {
             <br/>
             <div className="symbol-divider">─ ❧ ─</div>
             <br/>
-            <label className="label-heading">Additional People In Your Party:</label>
+            <label className="label-heading">Additional People In Your Party (Please enter everyone's full names):</label>
             {additionalNames.map((value, index) => (
               <div className="guest" key={index}>
                 <input

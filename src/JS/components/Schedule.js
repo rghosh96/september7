@@ -73,6 +73,10 @@ function Schedule() {
           <p className="info-details location-details">This hotel is located in Bentonville, AR, and is about 15 minutes away from the venue. We have 10 rooms blocked out at this hotel from Thursday September 6 - Sunday September 8, so there is <strong>limited availability</strong>. If you're interested, <strong>you must book this hotel by July 26th.</strong> Please use the link below to get our special group rate!</p>
           <a className="info-link" href="https://www.marriott.com/events/start.mi?id=1717102488138&key=GRP">Click here to book Four Points by Sheraton!</a>
           <br/>
+          <p className="info-label location">Avid, an IHG Hotel</p>
+          <p className="info-details location-details">This hotel is also located in Bentonville, AR, and is about 15 minutes away from the venue. We have 10 rooms blocked out at this hotel from Thursday September 6 - Sunday September 8, so there is <strong>limited availability</strong>. If you're interested, <strong>you must book this hotel by August 9th.</strong> Please use the link below to get our special group rate!</p>
+          <a className="info-link" href="https://www.avidhotels.com/redirect?path=asearch&brandCode=va&localeCode=en&regionCode=1&hotelCode=FYVAV&checkInDate=06&checkInMonthYear=082024&checkOutDate=08&checkOutMonthYear=082024&rateCode=6CBARC&_PMID=99801505&GPC=GOW&cn=no&viewfullsite=true">Click here to book Avid, an IHG Hotel!</a>
+          <br/>
 
           <div className="symbol-divider">─ ❧ ─</div>
           <p className="info-section-title">Things to Do</p>

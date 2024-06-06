@@ -39,6 +39,11 @@ function Gallery() {
           </div>
 
           <div className="q-and-a">
+            <h3 className="question">Q: What will the weather be like?</h3>
+            <p className="answer">A: It will be pretty warm! High temperatures are around 80-90 degrees Farenheight, and low temperatures are in the 60's.</p>
+          </div>
+
+          <div className="q-and-a">
             <h3 className="question">Q: What is the dress code/attire?</h3>
             <p className="answer">A: We encourage guests to dress: cocktail, semi-formal/dressy-casual, or festive!</p>
           </div>
