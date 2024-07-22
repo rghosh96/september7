@@ -32,7 +32,14 @@ function Information() {
           <div className="event-container">
             <p className="event-time">12:00pm - 2:00pm</p>
             <p className="event-title">Ceremony</p>
-            <p className="event-details">The ceremony will be held outdoors (weather permitting). Because our (Hindu) ceremony is longer than the average ceremony, guests are not expected to stay seated the entire time! Lunch will be provided during the ceremony.</p>
+            <p className="event-details">The ceremony will be held outdoors (weather permitting). Because our (Hindu) ceremony is longer than the average ceremony, guests are not expected to stay seated the entire time!</p>
+          </div>
+
+          <div className="symbol-divider">─ ❧ ─</div>
+          <div className="event-container">
+            <p className="event-time">1:00pm - 3:00pm</p>
+            <p className="event-title">Lunch</p>
+            <p className="event-details">Lunch will be served during the ceremony.</p>
           </div>
 
           <div className="symbol-divider">─ ❧ ─</div>
@@ -45,29 +52,36 @@ function Information() {
           <div className="symbol-divider">─ ❧ ─</div>
           <div className="event-container">
             <p className="event-time">5:00pm - 6:00pm</p>
-            <p className="event-title">Snacks</p>
-            <p className="event-details">We will provide some light snacks/refreshments outside (weather permitting).</p>
-          </div>
-
-          <div className="symbol-divider">─ ❧ ─</div>
-          <div className="event-container">
-            <p className="event-time">6:00pm - 7:00pm</p>
             <p className="event-title">Reception Hall Opens</p>
-            <p className="event-details">Guests may seat themselves in the reception hall. The bar will also open! :)</p>
+            <p className="event-details">Guests start to seat themselves in the recpetion all. Bar will also open, and snacks will be provided!</p>
           </div>
 
           <div className="symbol-divider">─ ❧ ─</div>
           <div className="event-container">
-            <p className="event-time">7:00pm - 9:00pm</p>
+            <p className="event-time">6:00pm</p>
+            <p className="event-title">Reception Begins</p>
+            <p className="event-details">Our newly weds will make their entrance :)</p>
+          </div>
+
+          <div className="symbol-divider">─ ❧ ─</div>
+          <div className="event-container">
+            <p className="event-time">6:30pm</p>
             <p className="event-title">Reception Dinner</p>
-            <p className="event-details">Dinner will be served! The cuisine is Indian food.</p>
+            <p className="event-details">Tables will be released one by one for our buffet-style reception dinner!</p>
           </div>
 
           <div className="symbol-divider">─ ❧ ─</div>
           <div className="event-container">
-            <p className="event-time">9:00pm - 11:00pm</p>
+            <p className="event-time">8:00pm - 10:00pm</p>
             <p className="event-title">Party!</p>
             <p className="event-details">The dance floor will open, and it's party time!!!</p>
+          </div>
+
+          <div className="symbol-divider">─ ❧ ─</div>
+          <div className="event-container">
+            <p className="event-time">10:00pm</p>
+            <p className="event-title">Send-Off</p>
+            <p className="event-details">We will send off our newly weds and wish them luck in their beautiful future life together!</p>
           </div>
       </div>
 
