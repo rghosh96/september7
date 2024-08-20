@@ -15,9 +15,6 @@ function Home() {
         <h1 className="title">Rashi & Gabriel</h1>
     
         <CountdownTimer />
-        <Link to="./rsvp">
-          <button className="RSVP-btn">RSVP Now!</button>
-        </Link>
        
       </div>
 

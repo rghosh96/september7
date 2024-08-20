@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../CSS/RSVP.css';
 import { ReactComponent as Border } from '../../assets/GoldBorder.svg'
 
@@ -96,6 +96,41 @@ const Modal = ({ isOpen, onClose, name, response, email, additionalNames, dietar
 function RSVP() {
 
   const [scroll, setScroll] = useState(false);
+  // 🗓️ State to hold the number of days
+  const [daysSinceJuly31, setDaysSinceJuly31] = useState(0);
+  const [daysUntilSeptember7, setDaysUntilSeptember7] = useState(0);
+
+  useEffect(() => {
+   // 📅 Get today's date
+   const today = new Date();
+
+   // 📅 Set the target date for July 31, 2024
+   const july31Date = new Date('2024-07-31');
+
+   // 🧮 Calculate the difference in milliseconds since July 31
+   const differenceSinceJuly31 = today - july31Date;
+
+   // 🕒 Convert milliseconds to days for July 31
+   const millisecondsPerDay = 1000 * 60 * 60 * 24;
+   const daysSince = Math.floor(differenceSinceJuly31 / millisecondsPerDay);
+   setDaysSinceJuly31(daysSince);
+
+   // 📅 Set the target date for September 7
+   const september7Date = new Date(today.getFullYear(), 8, 7); // Month is 0-indexed (8 for September)
+
+   // Check if the target date has already passed this year
+   if (today > september7Date) {
+     september7Date.setFullYear(today.getFullYear() + 1); // Move to next year
+   }
+
+   // 🧮 Calculate the difference in milliseconds until September 7
+   const differenceUntilSeptember7 = september7Date - today;
+
+   // 🕒 Convert milliseconds to days for September 7
+   const daysUntil = Math.ceil(differenceUntilSeptember7 / millisecondsPerDay);
+   setDaysUntilSeptember7(daysUntil);
+ }, []); // Empty dependency array to run only once on component mount
+
   const handleScroll = (event) => {
     console.log('User scrolled!', event.target.scrollTop);
     if (event.target.scrollTop > 400){
@@ -265,248 +300,265 @@ function RSVP() {
 
   return (
     <div className="top">
-      {submitted ? (
-         <div onScroll={handleScroll} className="RSVP">
+      <div onScroll={handleScroll} className="RSVP">
            <div className="nav-bg"></div>
-         <div id="loader">
-           <div className="loader"></div>
-           <br/>
-           <br/>
-           <br/>
-           <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
-         </div>
          
          <Border class="top-left border"/>
          <Border class="top-right border"/>
          <Border class="bottom-left border"/>
          <Border class="bottom-right border"/>
    
-         <h1 className="RSVP-title">RSVP</h1>
+         <h1 className="title">Oops, you're a bit late...</h1>
          <hr className="gold"/>
          <br/>
          <br/>
-         <br/>
-   
-         <p className="more-info1">Your RSVP has been submitted!</p>
-         <p className="more-info1">You will be getting a confirmation email with your RSVP details within a few minutes! <em>Please be sure to check your spam/junk folder.</em></p>
-         <p className="more-info1">In the meantime, please visit our Schedule, Information, and FAQ pages!!</p>
+         <p className="more-info1">Specifically, <em>{daysSinceJuly31} days</em> late (deadline was July 31). We have <em>{daysUntilSeptember7} days</em> until the wedding. Hence, <em>we are no longer accepting RSVP's.</em></p>
+         <p className="more-info1">Rashi & Gabe have a wedding to plan!!!</p>
        </div>
-      ) : (
-        <div onScroll={handleScroll} className={`RSVP ${['Accept', 'Tentative'].includes(response)? 'expanded' : ''}`}>
-           <div className={`nav-bg ${['Accept', 'Tentative'].includes(response) ? 'scroll' : ''}`}></div>
-        <div id="loader">
-          <div className="loader"></div>
-          <br/>
-          <br/>
-          <br/>
-          <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
-        </div>
+    </div>
+    // <div className="top">
+    //   {submitted ? (
+    //      <div onScroll={handleScroll} className="RSVP">
+    //        <div className="nav-bg"></div>
+    //      <div id="loader">
+    //        <div className="loader"></div>
+    //        <br/>
+    //        <br/>
+    //        <br/>
+    //        <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
+    //      </div>
+         
+    //      <Border class="top-left border"/>
+    //      <Border class="top-right border"/>
+    //      <Border class="bottom-left border"/>
+    //      <Border class="bottom-right border"/>
+   
+    //      <h1 className="RSVP-title">RSVP</h1>
+    //      <hr className="gold"/>
+    //      <br/>
+    //      <br/>
+    //      <br/>
+   
+    //      <p className="more-info1">Your RSVP has been submitted!</p>
+    //      <p className="more-info1">You will be getting a confirmation email with your RSVP details within a few minutes! <em>Please be sure to check your spam/junk folder.</em></p>
+    //      <p className="more-info1">In the meantime, please visit our Schedule, Information, and FAQ pages!!</p>
+    //    </div>
+    //   ) : (
+    //     <div onScroll={handleScroll} className={`RSVP ${['Accept', 'Tentative'].includes(response)? 'expanded' : ''}`}>
+    //        <div className={`nav-bg ${['Accept', 'Tentative'].includes(response) ? 'scroll' : ''}`}></div>
+    //     <div id="loader">
+    //       <div className="loader"></div>
+    //       <br/>
+    //       <br/>
+    //       <br/>
+    //       <p className="loading">Submitting your RSVP (Please do not refresh!)...</p>
+    //     </div>
         
-        <Border class="top-left border"/>
-        <Border class="top-right border"/>
-        <Border class="bottom-left border"/>
-        <Border class="bottom-right border"/>
+    //     <Border class="top-left border"/>
+    //     <Border class="top-right border"/>
+    //     <Border class="bottom-left border"/>
+    //     <Border class="bottom-right border"/>
   
-        <h1 className="RSVP-title">RSVP</h1>
-        <p className="RSVP-by">Please RSVP by July 31</p>
-        <hr className="gold"/>
-        <br/>
+    //     <h1 className="RSVP-title">RSVP</h1>
+    //     <p className="RSVP-by">Please RSVP by July 31</p>
+    //     <hr className="gold"/>
+    //     <br/>
 
   
-        <form onSubmit={handleSubmit}>
-        <div className="form-section">
-          <label className="label-heading">Your Name:</label>
-          <input
-            type="text"
-            value={name}
-            placeholder="Please enter your full name"
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-section">
-            <label className="label-heading">Your Email:</label>
-            <input
-              type="email"
-              value={email}
-              placeholder="Please enter your email"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-        <div className="form-section" required>
-          <label className="label-heading">Your Response:</label>
-            <label>
-              <input
-                type="radio"
-                name="response"
-                value="Accept"
-                checked={response === 'Accept'}
-                onChange={(e) => setResponse(e.target.value)}
-              />
-              Joyfully <i>accepts</i>
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="response"
-                value="Decline"
-                checked={response === 'Decline'}
-                onChange={(e) => setResponse(e.target.value)}
-              />
-              Respectfully <i>declines</i>
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="response"
-                value="Tentative"
-                checked={response === 'Tentative'}
-                onChange={(e) => setResponse(e.target.value)}
-              />
-              Is <i>tentative</i>
-            </label>
-          </div>
-          <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response)? 'flex' : 'none' }}>
-            <br/>
-            <div className="symbol-divider">─ ❧ ─</div>
-            <br/>
-            <label className="label-heading">Additional People In Your Party (Please enter everyone's full names):</label>
-            {additionalNames.map((value, index) => (
-              <div className="guest" key={index}>
-                <input
-                  type="text"
-                  value={value}
-                  placeholder="Enter additional name in your party"
-                  onChange={(e) => handleAdditionalNameChange(index, e.target.value)}
-                />
-                <button className="remove" onClick={() => handleRemoveNameField(index)}>-</button>
-              </div>
-            ))}
-            <button className="add" onClick={handleAddNameField}>+ Add Guest</button>
-          </div>
-          <div className="form-section" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
-            <br/>
-            <div className="symbol-divider">─ ❧ ─</div>
-            <br/>
-            <label className="label-subheading">Are there any dietary restrictions/preferences in your party? Please select all that apply:</label>
-            <label className="label-subheading-note">*Note: We cannot guarantee we will be able to accommodate all dietary restrictions/preferences in our buffet-style reception dinner, but will do our best!</label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Vegetarian"
-                checked={dietaryPreferences.vegetarian}
-                onChange={handleDietaryPreferenceChange}
-              /> Vegetarian
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Vegan"
-                checked={dietaryPreferences.vegan}
-                onChange={handleDietaryPreferenceChange}
-              /> Vegan
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Gluten Allergy"
-                checked={dietaryPreferences.glutenAllergy}
-                onChange={handleDietaryPreferenceChange}
-              /> No Gluten
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="No Dairy"
-                checked={dietaryPreferences.noDairy}
-                onChange={handleDietaryPreferenceChange}
-              /> No Dairy
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="No Beef"
-                checked={dietaryPreferences.noBeef}
-                onChange={handleDietaryPreferenceChange}
-              /> No Beef
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="No Pork"
-                checked={dietaryPreferences.noPork}
-                onChange={handleDietaryPreferenceChange}
-              /> No Pork
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Peanut Allergy"
-                checked={dietaryPreferences.peanutAllergy}
-                onChange={handleDietaryPreferenceChange}
-              /> Peanut Allergy
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Shellfish Allergy"
-                checked={dietaryPreferences.shellfishAllergy}
-                onChange={handleDietaryPreferenceChange}
-              /> Shellfish Allergy
-            </label>
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Low Carb"
-                checked={dietaryPreferences.lowCarb}
-                onChange={handleDietaryPreferenceChange}
-              /> Low Carb
-            </label>
-           {/* "Not listed" checkbox */}
-            <label className="dietary-option">
-              <input
-                type="checkbox"
-                name="Not Listed:"
-                checked={dietaryPreferences.notListed}
-                onChange={handleDietaryPreferenceChange}
-              /> Not listed:
-            </label>
-            <input className="simple-text"
-              type="text"
-              value={notListedPreference}
-              placeholder="Please specify"
-              onChange={(e) => setNotListedPreference(e.target.value)}
-            />
-          </div>
-          <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
-            <br/>
-            <div className="symbol-divider">─ ❧ ─</div>
-            <br/>
-            <label className="label-subheading">Finally, we are accepting song requests for the reception dance party! Please suggest us some songs:</label>
-            {songRequests.map((value, index) => (
-              <div className="song-request" key={index}>
-                <input
-                  type="text"
-                  className="simple-text"
-                  value={value}
-                  placeholder="Enter song request"
-                  onChange={(e) => handleSongRequestChange(index, e.target.value)}
-                />
-                <button className="remove" onClick={() => handleRemoveSongRequest(index)}>-</button>
-              </div>
-            ))}
-            <button className="add" onClick={handleAddSongRequest}>+ Add Song</button>
-          </div>
-          <div className="center"  style={{ display: ['Accept', 'Tentative', 'Decline'].includes(response) ? 'flex' : 'none' }}>
-            <button className="submit-button" >Confirm RSVP</button>
-          </div>
-      </form>
-      <p style={{ display: ['Accept', 'Decline', 'Tentative'].includes(response) ? 'none' : 'block' }} className='more-info'>Please only enter one name from your party. You will be able to add more people later. :)</p>
-      <Modal isOpen={isModalOpen} onClose={closeModal} name={name} response={response} email={email} additionalNames={additionalNames} dietaryPreferences={dietaryPreferences} notListedPreference={notListedPreference} songRequests={songRequests} logToGSheets={logToGSheets} />
-      </div>
-      )}
-    </div>
+    //     <form onSubmit={handleSubmit}>
+    //     <div className="form-section">
+    //       <label className="label-heading">Your Name:</label>
+    //       <input
+    //         type="text"
+    //         value={name}
+    //         placeholder="Please enter your full name"
+    //         onChange={(e) => setName(e.target.value)}
+    //         required
+    //       />
+    //     </div>
+    //     <div className="form-section">
+    //         <label className="label-heading">Your Email:</label>
+    //         <input
+    //           type="email"
+    //           value={email}
+    //           placeholder="Please enter your email"
+    //           onChange={(e) => setEmail(e.target.value)}
+    //           required
+    //         />
+    //       </div>
+    //     <div className="form-section" required>
+    //       <label className="label-heading">Your Response:</label>
+    //         <label>
+    //           <input
+    //             type="radio"
+    //             name="response"
+    //             value="Accept"
+    //             checked={response === 'Accept'}
+    //             onChange={(e) => setResponse(e.target.value)}
+    //           />
+    //           Joyfully <i>accepts</i>
+    //         </label>
+    //         <label>
+    //           <input
+    //             type="radio"
+    //             name="response"
+    //             value="Decline"
+    //             checked={response === 'Decline'}
+    //             onChange={(e) => setResponse(e.target.value)}
+    //           />
+    //           Respectfully <i>declines</i>
+    //         </label>
+    //         <label>
+    //           <input
+    //             type="radio"
+    //             name="response"
+    //             value="Tentative"
+    //             checked={response === 'Tentative'}
+    //             onChange={(e) => setResponse(e.target.value)}
+    //           />
+    //           Is <i>tentative</i>
+    //         </label>
+    //       </div>
+    //       <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response)? 'flex' : 'none' }}>
+    //         <br/>
+    //         <div className="symbol-divider">─ ❧ ─</div>
+    //         <br/>
+    //         <label className="label-heading">Additional People In Your Party (Please enter everyone's full names):</label>
+    //         {additionalNames.map((value, index) => (
+    //           <div className="guest" key={index}>
+    //             <input
+    //               type="text"
+    //               value={value}
+    //               placeholder="Enter additional name in your party"
+    //               onChange={(e) => handleAdditionalNameChange(index, e.target.value)}
+    //             />
+    //             <button className="remove" onClick={() => handleRemoveNameField(index)}>-</button>
+    //           </div>
+    //         ))}
+    //         <button className="add" onClick={handleAddNameField}>+ Add Guest</button>
+    //       </div>
+    //       <div className="form-section" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
+    //         <br/>
+    //         <div className="symbol-divider">─ ❧ ─</div>
+    //         <br/>
+    //         <label className="label-subheading">Are there any dietary restrictions/preferences in your party? Please select all that apply:</label>
+    //         <label className="label-subheading-note">*Note: We cannot guarantee we will be able to accommodate all dietary restrictions/preferences in our buffet-style reception dinner, but will do our best!</label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Vegetarian"
+    //             checked={dietaryPreferences.vegetarian}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Vegetarian
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Vegan"
+    //             checked={dietaryPreferences.vegan}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Vegan
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Gluten Allergy"
+    //             checked={dietaryPreferences.glutenAllergy}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> No Gluten
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="No Dairy"
+    //             checked={dietaryPreferences.noDairy}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> No Dairy
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="No Beef"
+    //             checked={dietaryPreferences.noBeef}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> No Beef
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="No Pork"
+    //             checked={dietaryPreferences.noPork}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> No Pork
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Peanut Allergy"
+    //             checked={dietaryPreferences.peanutAllergy}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Peanut Allergy
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Shellfish Allergy"
+    //             checked={dietaryPreferences.shellfishAllergy}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Shellfish Allergy
+    //         </label>
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Low Carb"
+    //             checked={dietaryPreferences.lowCarb}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Low Carb
+    //         </label>
+    //        {/* "Not listed" checkbox */}
+    //         <label className="dietary-option">
+    //           <input
+    //             type="checkbox"
+    //             name="Not Listed:"
+    //             checked={dietaryPreferences.notListed}
+    //             onChange={handleDietaryPreferenceChange}
+    //           /> Not listed:
+    //         </label>
+    //         <input className="simple-text"
+    //           type="text"
+    //           value={notListedPreference}
+    //           placeholder="Please specify"
+    //           onChange={(e) => setNotListedPreference(e.target.value)}
+    //         />
+    //       </div>
+    //       <div className="more-guests" style={{ display: ['Accept', 'Tentative'].includes(response) ? 'flex' : 'none' }}>
+    //         <br/>
+    //         <div className="symbol-divider">─ ❧ ─</div>
+    //         <br/>
+    //         <label className="label-subheading">Finally, we are accepting song requests for the reception dance party! Please suggest us some songs:</label>
+    //         {songRequests.map((value, index) => (
+    //           <div className="song-request" key={index}>
+    //             <input
+    //               type="text"
+    //               className="simple-text"
+    //               value={value}
+    //               placeholder="Enter song request"
+    //               onChange={(e) => handleSongRequestChange(index, e.target.value)}
+    //             />
+    //             <button className="remove" onClick={() => handleRemoveSongRequest(index)}>-</button>
+    //           </div>
+    //         ))}
+    //         <button className="add" onClick={handleAddSongRequest}>+ Add Song</button>
+    //       </div>
+    //       <div className="center"  style={{ display: ['Accept', 'Tentative', 'Decline'].includes(response) ? 'flex' : 'none' }}>
+    //         <button className="submit-button" >Confirm RSVP</button>
+    //       </div>
+    //   </form>
+    //   <p style={{ display: ['Accept', 'Decline', 'Tentative'].includes(response) ? 'none' : 'block' }} className='more-info'>Please only enter one name from your party. You will be able to add more people later. :)</p>
+    //   <Modal isOpen={isModalOpen} onClose={closeModal} name={name} response={response} email={email} additionalNames={additionalNames} dietaryPreferences={dietaryPreferences} notListedPreference={notListedPreference} songRequests={songRequests} logToGSheets={logToGSheets} />
+    //   </div>
+    //   )}
+    // </div>
   );
 }
 
